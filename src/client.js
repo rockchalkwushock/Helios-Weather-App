@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import routes from './routes';
+import route from './route';
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(routes, document.getElementById('app'));
+  ReactDOM.render(route, document.getElementById('app'));
 });
