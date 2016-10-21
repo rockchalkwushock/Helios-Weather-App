@@ -1,7 +1,7 @@
 import { CURRENT_WEATHER } from '../actions/actions';
 
 export default (state = [], action) => {
-  // console.log('Current Weather Action Received: ', action);
+  console.log('Current Weather Action Received: ', action);
   switch (action.type) {
     case CURRENT_WEATHER:
           // returning new instance.
