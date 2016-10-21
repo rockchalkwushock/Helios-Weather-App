@@ -8,7 +8,7 @@ describe('<SearchBar />', () => {
   it('should have the name: SearchBar', () => {
     const TestComponent = () => <SearchBar />;
     const wrapper = shallow(<TestComponent />);
-    expect(wrapper.name()).to.equal('SearchBar');
+    expect(wrapper.name()).to.equal('Connect(SearchBar)');
   });
   it('should be a form', () => {
     const wrapper = shallow(<form/>);
