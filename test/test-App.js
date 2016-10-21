@@ -18,8 +18,9 @@ describe('<App />', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('div').hasClass('test')).to.equal(true);
   });
-  it('should have one children', () => {
+  it('should have two children', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('Connect(SearchBar)')).to.have.length(1);
+    expect(wrapper.find('Dashboard')).to.have.length(1);
   });
 });
