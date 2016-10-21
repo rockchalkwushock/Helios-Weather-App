@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchForecast } from '../actions/actions';
+import { fetchCurrentWeather, fetchForecast } from '../actions/actions';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class SearchBar extends Component {
   _onFormSubmit(event) {
     event.preventDefault();
     // Here is where we go to fetch weather data.
+    this.props.fetchCurrentWeather(this.state.term);
     this.props.fetchForecast(this.state.term);
     this.setState({ term: '' }); // empty the form.
   }
@@ -45,4 +46,4 @@ class SearchBar extends Component {
 // Shortcut removes mapDispatchtoProps & bindActionCreators by injecting
 // action creator as object in place of mapDispatchtoProps.
 // ES6 shortcut fetchForecast: fetchForecast === fetchForecast.
-export default connect(null, { fetchForecast })(SearchBar);
+export default connect(null, { fetchCurrentWeather, fetchForecast })(SearchBar);

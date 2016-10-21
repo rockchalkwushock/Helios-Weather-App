@@ -1,9 +1,9 @@
-import { FETCH_FORECAST } from '../actions/actions';
+import { CURRENT_WEATHER } from '../actions/actions';
 
 export default (state = [], action) => {
-  // console.log('Forecat Action Received: ', action);
+  // console.log('Current Weather Action Received: ', action);
   switch (action.type) {
-    case FETCH_FORECAST:
+    case CURRENT_WEATHER:
           // returning new instance.
           // return state.concat([ action.payload.data ]);
           return [ action.payload.data, ...state ]; //ES6 method (newest record first)
