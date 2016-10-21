@@ -3,10 +3,6 @@ import {connect} from 'react-redux';
 
 
 export class CurrentWeather extends Component {
-    constructor(props) {
-        super(props);
-        console.log(props);
-    }
     _renderWeather(cityData) {
         const name = cityData.name;
         const {temp, pressure, humidity} = cityData.main;

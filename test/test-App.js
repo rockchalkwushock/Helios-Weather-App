@@ -20,7 +20,7 @@ describe('<App />', () => {
   });
   it('should have two children', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('Connect(SearchBar)')).to.have.length(1);
+    expect(wrapper.find('SearchBar')).to.have.length(0);
     expect(wrapper.find('Dashboard')).to.have.length(1);
   });
 });
