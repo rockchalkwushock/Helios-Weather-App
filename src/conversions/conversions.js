@@ -39,7 +39,7 @@ export const timeStampConverter = (utcTime) => {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  
+
   switch (true) {
     case (hours === 13): return `1:${minutes} pm`;
     case (hours === 14): return `2:${minutes} pm`;
@@ -55,4 +55,9 @@ export const timeStampConverter = (utcTime) => {
     case (hours === 24): return `12:${minutes} pm`;
   }
   return `${hours}:${minutes} am`;
+};
+
+export const windSpeedConverter = (mps) => {
+  const mpsConversion =  0.44704;
+  return _.round(mps / mpsConversion);
 };

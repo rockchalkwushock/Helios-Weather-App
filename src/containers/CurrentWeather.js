@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {degToCard, pressureConverter, tempConverter, timeStampConverter} from '../conversions/conversions';
+import {degToCard, pressureConverter, tempConverter, timeStampConverter, windSpeedConverter} from '../conversions/conversions';
 
 export class CurrentWeather extends Component {
     _renderWeather(cityData) {
@@ -10,13 +10,14 @@ export class CurrentWeather extends Component {
         const {sunrise, sunset} = cityData.sys;
 
         const windDir = degToCard(deg);
+        const windSpd = windSpeedConverter(speed);
         const sunRise = timeStampConverter(sunrise);
         const sunSet = timeStampConverter(sunset);
         const pressureInches = pressureConverter(pressure);
         const farenheit = tempConverter(temp);
         console.log(`Wind Direction: ${windDir}`, `Sunrise: ${sunRise}`, `Sunset: ${sunSet}`);
         return (
-            <div>
+            <div key={name}>
                 <div className='header'>
                     <h2>{name}</h2>
                     <h6>
@@ -35,11 +36,11 @@ export class CurrentWeather extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                    <tr key={name}>
+                    <tr>
                         <td>{farenheit} F</td>
                         <td>{pressureInches}"</td>
                         <td>{humidity} %</td>
-                        <td>{speed} mph {windDir}</td>
+                        <td>{windSpd} mph {windDir}</td>
                     </tr>
                     </tbody>
                 </table>
