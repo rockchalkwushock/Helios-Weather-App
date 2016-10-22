@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const API_KEY = '36b647d02ca19e41cd06d535560d2752';
-const UNITS = 'imperial';
 const CURRENT_ROOT_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
 const FORECAST_ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
@@ -10,7 +9,7 @@ export const FETCH_FORECAST = 'FETCH_FORECAST';
 
 
 export function fetchCurrentWeather(city) {
-  const url = `${CURRENT_ROOT_URL}&q=${city},us&units=${UNITS}`;
+  const url = `${CURRENT_ROOT_URL}&q=${city},us`;
   const request = axios.get(url);
 
   // console.log('Request Current Weather: ', request);
@@ -22,7 +21,7 @@ export function fetchCurrentWeather(city) {
 }
 
 export function fetchForecast(city) {
-  const url = `${FORECAST_ROOT_URL}&q=${city},us&units=${UNITS}`; // {countrycode} set to static: USA
+  const url = `${FORECAST_ROOT_URL}&q=${city},us`; // {countrycode} set to static: USA
   const request = axios.get(url); // this is my AJAX request.
 
   // console.log('Request Forecast: ', request);
