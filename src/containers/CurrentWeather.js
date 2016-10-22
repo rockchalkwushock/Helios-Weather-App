@@ -54,7 +54,7 @@ export class CurrentWeather extends Component {
         }
 
         return (
-            <div>
+            <div className='test'>
               {listTable}
             </div>
         );
