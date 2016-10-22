@@ -18,9 +18,9 @@ describe('<Dashboard />', () => {
     const wrapper = shallow(<Dashboard />);
     expect(wrapper.find('div').hasClass('dash')).to.equal(true);
   });
-  it('should have one children', () => {
+  it('should have two children', () => {
     const wrapper = shallow(<Dashboard />);
     expect(wrapper.find('CurrentWeather')).to.have.length(0);
-    expect(wrapper.find('Forecast')).to.have.length(1);
+    expect(wrapper.find('Forecast')).to.have.length(0);
   });
 });

@@ -14,13 +14,13 @@ describe('<CurrentWeather />', () => {
     const wrapper = shallow(<table/>);
     expect(wrapper.name()).to.equal('table');
   });
-  it('should have className: table', () => {
+  it('should have className: test', () => {
     const wrapper = shallow(<CurrentWeather />);
-    expect(wrapper.find('table').hasClass('table')).to.equal(true);
+    expect(wrapper.find('div').hasClass('test')).to.equal(true);
   });
   it('should have one child', () => {
     const wrapper = shallow(<CurrentWeather />);
-    expect(wrapper.find('table')).to.have.length(1);
+    expect(wrapper.find('div')).to.have.length(1);
   });
   it('should have no content in tbody beofre action', () => {
     const wrapper = render(<CurrentWeather />);
