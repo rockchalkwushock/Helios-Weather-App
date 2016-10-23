@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {unitConverter} from '../conversions/conversions_2.0.js';
+import {unitConverter} from '../conversions/conversions_2.0';
 
 
-class Forecast extends Component {
+export class Forecast extends Component {
   _renderForecast(cityData){
     return cityData.list.slice(0,5).map(data => {
       return (

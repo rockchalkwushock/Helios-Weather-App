@@ -1,62 +1,42 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {degToCard, pressureConverter, tempConverter, timeStampConverter, windSpeedConverter} from '../conversions/conversions';
+import {unitConverter} from '../conversions/conversions_2.0';
 
 export class CurrentWeather extends Component {
-    _renderWeather(cityData) {
+    _renderCurrentWeather(cityData) {
         const name = cityData.name;
         const {temp, pressure, humidity} = cityData.main;
         const {speed, deg} = cityData.wind;
         const {sunrise, sunset} = cityData.sys;
-
-        const windDir = degToCard(deg);
-        const windSpd = windSpeedConverter(speed);
-        const sunRise = timeStampConverter(sunrise);
-        const sunSet = timeStampConverter(sunset);
-        const pressureInches = pressureConverter(pressure);
-        const farenheit = tempConverter(temp);
-        console.log(`Wind Direction: ${windDir}`, `Sunrise: ${sunRise}`, `Sunset: ${sunSet}`);
         return (
-            <div key={name}>
-                <div className='header'>
-                    <h2>{name}</h2>
-                    <h6>
-                        <span>Sunrise: {sunRise}</span>
-                        <span>Sunset: {sunSet}</span>
-                    </h6>
-                </div>
-
-                <table className="table table-reflow">
-                    <thead>
-                        <tr>
-                            <th>Temperature</th>
-                            <th>Pressure</th>
-                            <th>Humidity</th>
-                            <th>Wind</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>{farenheit} F</td>
-                        <td>{pressureInches}"</td>
-                        <td>{humidity} %</td>
-                        <td>{windSpd} mph {windDir}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+            <tr key={name}>
+                <td>{unitConverter.toFarenheit(temp)} F</td>
+                <td>{unitConverter.toInchesHG(pressure)}"</td>
+                <td>{humidity}%</td>
+                <td>{unitConverter.toMPH(speed)}mph {unitConverter.toCardinal(deg)}</td>
+            </tr>
         );
     }
-    render() {
-        let listTable = [];
-        if (this.props.current) {
-            listTable = this.props.current.map(this._renderWeather);
-        }
 
+    render() {
+        let currentWeatherData = [];
+        if (this.props.current) {
+            currentWeatherData = this.props.current.map(this._renderCurrentWeather);
+        }
         return (
-            <div className='weather'>
-              {listTable}
-            </div>
+            <table className="table table-reflow">
+                <thead>
+                    <tr>
+                        <th>Temperature</th>
+                        <th>Pressure</th>
+                        <th>Humidity</th>
+                        <th>Wind</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {currentWeatherData}
+                </tbody>
+            </table>
         );
     }
 }
