@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 export const unitConverter = {
-  toDegree: (deg) => {
+  toCardinal: (deg) => {
     switch (true) {
       case (deg>11.25 && deg<33.75): return 'NNE';
       case (deg>33.75 && deg<56.25): return 'NE';
@@ -18,26 +18,26 @@ export const unitConverter = {
       case (deg>281.25 && deg<303.75): return 'WNW';
       case (deg>303.75 && deg<326.25): return 'NW';
       case (deg>326.25 && deg<348.75): return 'NNW';
-      case (deg>348.75 && deg<11.25): return 'N';
+      default: return 'N';
     }
   },
 
-  toPressure: (hPa) => {
+  toInchesHG: (hPa) => {
     const hPaConversion = 33.8638866667;
     return _.round(hPa / hPaConversion, 2);
   },
 
-  toSpeed: (metersPerSecond) => {
+  toMPH: (metersPerSecond) => {
     const metersPerSecondConversion =  0.44704;
     return _.round(metersPerSecond / metersPerSecondConversion);
   },
 
-  toTemp: (kelvin) => {
+  toFarenheit: (kelvin) => {
     const farenheit = _.round(kelvin * (9/5) - 459.67);
     return farenheit;
   },
 
-  toTime: (utcTime) => {
+  toGMT: (utcTime) => {
     const hours = new Date(utcTime * 1000).getHours();
     let minutes = new Date(utcTime * 1000).getMinutes();
 

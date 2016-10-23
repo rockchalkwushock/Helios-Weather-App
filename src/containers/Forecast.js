@@ -8,9 +8,9 @@ class Forecast extends Component {
     return cityData.list.slice(0,5).map(data => {
       return (
         <tr key={data.dt}>
-          <td>{unitConverter.toTime(data.dt)}</td>
-          <td>{unitConverter.toTemp(data.main.temp)}</td>
-          <td>{unitConverter.toSpeed(data.wind.speed)} {unitConverter.toDegree(data.wind.deg)}</td>
+          <td>{unitConverter.toGMT(data.dt)}</td>
+          <td>{unitConverter.toFarenheit(data.main.temp)}</td>
+          <td>{unitConverter.toMPH(data.wind.speed)} {unitConverter.toCardinal(data.wind.deg)}</td>
         </tr>
       );
     });
