@@ -41,9 +41,4 @@ class SearchBar extends Component {
     );
   }
 }
-// Connect(mapStateToProps, mapDispatchtoProps)(Component).
-// No need for mapStateToProps but must pass null or will return error.
-// Shortcut removes mapDispatchtoProps & bindActionCreators by injecting
-// action creator as object in place of mapDispatchtoProps.
-// ES6 shortcut fetchForecast: fetchForecast === fetchForecast.
 export default connect(null, { fetchCurrentWeather, fetchForecast })(SearchBar);
