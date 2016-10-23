@@ -34,7 +34,11 @@ export const tempConverter = (kelvin) => {
 
 export const timeStampConverter = (utcTime) => {
   const hours = new Date(utcTime * 1000).getHours();
-  const minutes = new Date(utcTime * 1000).getMinutes();
+  let minutes = new Date(utcTime * 1000).getMinutes();
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   switch (true) {
     case (hours === 13): return `1:${minutes} pm`;
@@ -51,4 +55,9 @@ export const timeStampConverter = (utcTime) => {
     case (hours === 24): return `12:${minutes} pm`;
   }
   return `${hours}:${minutes} am`;
+};
+
+export const windSpeedConverter = (mps) => {
+  const mpsConversion =  0.44704;
+  return _.round(mps / mpsConversion);
 };
