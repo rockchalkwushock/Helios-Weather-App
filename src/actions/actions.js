@@ -8,7 +8,7 @@ export const CURRENT_WEATHER = 'CURRENT_WEATHER';
 export const FETCH_FORECAST = 'FETCH_FORECAST';
 
 
-export function fetchCurrentWeather(city) {
+export const fetchCurrentWeather = (city) => {
   const url = `${CURRENT_ROOT_URL}&q=${city},us`;
   const request = axios.get(url);
 
@@ -18,9 +18,9 @@ export function fetchCurrentWeather(city) {
     type: CURRENT_WEATHER,
     payload: request
   };
-}
+};
 
-export function fetchForecast(city) {
+export const fetchForecast = (city) => {
   const url = `${FORECAST_ROOT_URL}&q=${city},us`; // {countrycode} set to static: USA
   const request = axios.get(url); // this is my AJAX request.
 
@@ -30,4 +30,4 @@ export function fetchForecast(city) {
     type: FETCH_FORECAST,
     payload: request
   };
-}
+};
