@@ -9,7 +9,7 @@ export class Forecast extends Component {
       return (
         <tr key={data.dt}>
           <td>{unitConverter.toGMT(data.dt)}</td>
-          <td>{unitConverter.toFarenheit(data.main.temp)}</td>
+          <td>{unitConverter.toFarenheit(data.main.temp)} F</td>
           <td>{unitConverter.toMPH(data.wind.speed)} {unitConverter.toCardinal(data.wind.deg)}</td>
         </tr>
       );
@@ -17,6 +17,10 @@ export class Forecast extends Component {
   }
 
   render(){
+    let forecastData = [];
+    if (this.props.forecast) {
+       forecastData = this.props.forecast.map(this._renderForecast);
+    }
     return (
       <table className="table table-hover">
         <thead>
@@ -27,7 +31,7 @@ export class Forecast extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.forecast.map(this._renderForecast)}
+          {forecastData}
         </tbody>
       </table>
     );
