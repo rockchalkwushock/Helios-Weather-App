@@ -15,13 +15,11 @@ class AppContainer extends Component {
 
   _weatherSearch(term) {
     console.log(term);
-    // Here is where we go to fetch weather data.
     this.props.fetchCurrentWeather(term);
     this.props.fetchForecast(term);
   	}
 
   render() {
-    // Search hand off between parent & child.
     const getWeather = _.debounce(term => { this._weatherSearch(term); }, 300);
     return (
       <div className="application">
