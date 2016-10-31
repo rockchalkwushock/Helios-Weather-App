@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { propTypes } from 'react';
 
 const CurrentWeather = ({ weather }) => {
   if (!weather) {
@@ -25,5 +25,16 @@ const CurrentWeather = ({ weather }) => {
         </table>
     );
 };
+
+// CurrentWeather.propTypes = {
+//   weather: React.PropTypes.object,
+//   weather: {
+//     temp: React.PropTypes.xyz,
+//     pressure: React.PropTypes.xyz,
+//     humidity: React.PropTypes.xyz,
+//     windspd: React.PropTypes.xyz,
+//     winddir: React.PropTypes.xyz
+//   }
+// }
 
 export default CurrentWeather;

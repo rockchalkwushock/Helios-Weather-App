@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { propTypes } from 'react';
 
 const Forecast = ({ forecast }) => {
   if (!forecast) {
@@ -29,6 +29,16 @@ const Forecast = ({ forecast }) => {
     </table>
   );
 };
+
+// Forecast.propTypes = {
+//   forecast: React.PropTypes.arrayOf(React.PropTypes.object),
+//   forecast: {
+//     time: React.PropTypes.xyz,
+//     temp: React.PropTypes.xyz,
+//     windspd: React.PropTypes.xyz,
+//     winddir: React.PropTypes.xyz,
+//   }
+// }
 
 export default Forecast;
 

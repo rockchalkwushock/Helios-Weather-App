@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { propTypes } from 'react';
 
 const SearchBar = ({ getWeather }) => {
   return(
@@ -12,6 +12,10 @@ const SearchBar = ({ getWeather }) => {
       </span>
     </form>
   );
+}
+
+SearchBar.propTypes = {
+  getWeather: React.PropTypes.func
 }
 
 export default SearchBar;
