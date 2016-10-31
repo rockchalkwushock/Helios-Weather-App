@@ -9,7 +9,7 @@
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js",
     "clean": "rm -rf build",
-    "build:html": "npm run clean:html && cp index.html build/",
+    "build:html": "npm run clean:html && cp src/static/index.html build/",
     "clean:html": "rm -f build/index.html",
     "build:js": "npm run clean:js && webpack",
     "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map"
