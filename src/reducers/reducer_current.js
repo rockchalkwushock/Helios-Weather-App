@@ -16,6 +16,7 @@ The action is received as a promise from the action creator.
 */
 
 export default(state = initialState, action) => {
+  const data = action.payload;
     switch (action.type) {
         case `${CURRENT_WEATHER}_PENDING`:
             return {};
@@ -23,13 +24,14 @@ export default(state = initialState, action) => {
             return {
                 ...state,
                 weatherData: {
-                  humidity: action.payload.main.humidity,
-                  pressure: unitConverter.toInchesHG(action.payload.main.pressure),
-                  sunrise: unitConverter.toGMT(action.payload.sys.sunrise),
-                  sunset: unitConverter.toGMT(action.payload.sys.sunset),
-                  temp: unitConverter.toFarenheit(action.payload.main.temp),
-                  winddir: unitConverter.toCardinal(action.payload.wind.deg),
-                  windspd: unitConverter.toMPH(action.payload.wind.speed)
+                  humidity: data.main.humidity,
+                  pressure: unitConverter.toInchesHG(data.main.pressure),
+                  name: data.name,
+                  sunrise: unitConverter.toGMT(data.sys.sunrise),
+                  sunset: unitConverter.toGMT(data.sys.sunset),
+                  temp: unitConverter.toFarenheit(data.main.temp),
+                  winddir: unitConverter.toCardinal(data.wind.deg),
+                  windspd: unitConverter.toMPH(data.wind.speed)
                 },
                 isFetched: true
             };
@@ -37,7 +39,7 @@ export default(state = initialState, action) => {
             return {
                 ...state,
                 isFetched: true,
-                err: action.payload
+                err: data
             };
         default:
             return state;

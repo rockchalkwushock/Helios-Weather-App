@@ -28,15 +28,16 @@ const CurrentWeather = ({ weather, isFetched }) => {
     );
 };
 
-// CurrentWeather.propTypes = {
-//   weather: React.PropTypes.object,
-//   weather: {
-//     temp: React.PropTypes.xyz,
-//     pressure: React.PropTypes.xyz,
-//     humidity: React.PropTypes.xyz,
-//     windspd: React.PropTypes.xyz,
-//     winddir: React.PropTypes.xyz
-//   }
-// }
+CurrentWeather.propTypes = {
+  isFetched: React.PropTypes.bool,
+  weather: React.PropTypes.object,
+  weather: React.PropTypes.shape({
+    humidity: React.PropTypes.number,
+    pressure: React.PropTypes.number,
+    temp: React.PropTypes.number,
+    winddir: React.PropTypes.string,
+    windspd: React.PropTypes.number
+  })
+}
 
 export default CurrentWeather;

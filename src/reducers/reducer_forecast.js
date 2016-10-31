@@ -2,7 +2,7 @@ import { FETCH_FORECAST } from '../actions/actions';
 import { unitConverter } from '../conversions/conversions_2.0';
 
 const initialState = {
-    forecast: [],
+    hourlyforecast: [],
     isFetched: false,
     err: null
 };
@@ -30,7 +30,7 @@ export default(state = initialState, action) => {
         });
             return {
                 ...state,
-                forecast: convertedData,
+                hourlyforecast: convertedData,
                 isFetched: true
             };
         case `${FETCH_FORECAST}_REJECTED`:

@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentWeather, fetchForecast } from '../actions/actions';
 
-import SearchBar from '../components/SearchBar';
+
 import CurrentWeather from '../components/CurrentWeather';
 import Forecast from '../components/Forecast';
+import Header from '../components/Header';
+import SearchBar from '../components/SearchBar';
 
 class AppContainer extends Component {
 
@@ -21,11 +23,13 @@ class AppContainer extends Component {
 
   render() {
     const getWeather = _.debounce(term => { this._weatherSearch(term); }, 300);
+    const { current, forecast } = this.props;
     return (
       <div className="application">
         <SearchBar getWeather={getWeather} />
-        {Boolean(this.props.current) && <CurrentWeather weather={this.props.current.weatherData} isFetched={this.props.current.isFetched}/>}
-        {Boolean(this.props.forecast) && <Forecast forecast={this.props.forecast.forecast} isFetched={this.props.forecast.isFetched}/>}
+        <Header props={current.weatherData} isFetched={ current.isFetched }/>
+        {Boolean(current) && <CurrentWeather weather={ current.weatherData } isFetched={ current.isFetched }/>}
+        {Boolean(forecast) && <Forecast forecast={ forecast.hourlyforecast } isFetched={ forecast.isFetched }/>}
       </div>
     );
   }
