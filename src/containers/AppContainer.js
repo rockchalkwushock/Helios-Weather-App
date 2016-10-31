@@ -10,12 +10,10 @@ import Forecast from '../components/Forecast';
 class AppContainer extends Component {
 
   componentWillUpdate() {
-    // need to use this so CurrentWeather & Forecast are not appending before
-    // the search is performed.
+
   }
 
   _weatherSearch(input) {
-    console.log(input.value);
     this.props.fetchCurrentWeather(input.value);
     this.props.fetchForecast(input.value);
     input.value = '';

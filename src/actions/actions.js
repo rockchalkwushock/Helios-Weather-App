@@ -12,13 +12,11 @@ export const fetchCurrentWeather = (city) => {
          .then(res => resolve(res.data))
          .catch(err => reject(err));
   });
-  console.log(promise);
   return {
     type: CURRENT_WEATHER,
     payload: promise
   };
 };
-// console.log(fetchCurrentWeather('Wichita'));
 
 // NOTE: Fetches the api data for 3-hourly Forecast.
 export const fetchForecast = (city) => {
