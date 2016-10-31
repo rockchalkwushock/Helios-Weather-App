@@ -1,8 +1,10 @@
 import React, { propTypes } from 'react';
 
-const CurrentWeather = ({ weather }) => {
-  if (!weather) {
-    <h1>Loading...</h1>
+const CurrentWeather = ({ weather, isFetched }) => {
+  if (!isFetched) {
+    return (
+      <h1>Loading...</h1>
+    );
   }
     return (
         <table className="table table-reflow">

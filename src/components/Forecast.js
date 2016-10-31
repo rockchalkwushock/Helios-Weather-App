@@ -1,8 +1,10 @@
 import React, { propTypes } from 'react';
 
-const Forecast = ({ forecast }) => {
-  if (!forecast) {
-    <h1>Loading...</h1>
+const Forecast = ({ forecast, isFetched }) => {
+  if (!isFetched) {
+    return (
+      <h1>Loading...</h1>
+    );
   }
   const forecastData = forecast.map(data => {
     return(

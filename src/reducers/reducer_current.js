@@ -4,7 +4,8 @@ import { unitConverter } from '../conversions/conversions_2.0';
 const initialState = {
     weatherData: {},
     isFetched: false,
-    err: null
+    err: null,
+    term: ''
 };
 
 /*
@@ -16,7 +17,7 @@ The action is received as a promise from the action creator.
 */
 
 export default(state = initialState, action) => {
-  console.log(action.payload);
+  console.log(action.payload, action.type);
     switch (action.type) {
         case `${CURRENT_WEATHER}_PENDING`:
             return {};
@@ -32,12 +33,14 @@ export default(state = initialState, action) => {
                   winddir: unitConverter.toCardinal(action.payload.wind.deg),
                   windspd: unitConverter.toMPH(action.payload.wind.speed)
                 },
+                term: '',
                 isFetched: true
             };
         case `${CURRENT_WEATHER}_REJECTED`:
             return {
                 ...state,
                 isFetched: true,
+                term: '',
                 err: action.payload
             };
         default:
