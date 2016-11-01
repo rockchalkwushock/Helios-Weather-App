@@ -18,8 +18,11 @@ describe('<App />', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('div').hasClass('test')).to.equal(true);
   });
-  it('should have two children', () => {
+  it('should have four children', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('AppContainer')).to.have.length(0);
+    expect(wrapper.find('SearchBarContainer')).to.have.length(0);
+    expect(wrapper.find('HeaderContainer')).to.have.length(0);
+    expect(wrapper.find('CurrentWeatherContainer')).to.have.length(0);
+    expect(wrapper.find('ForecastContainer')).to.have.length(0);
   });
 });

@@ -1,9 +1,9 @@
 import React, { propTypes } from 'react';
 
-const SearchBar = ({ getWeather }) => {
+const SearchBar = ({ fetchWeather }) => {
   let textInput = null;
   return(
-    <form className='input-group' onSubmit={event => getWeather(textInput)}>
+    <form className='input-group' onSubmit={event => fetchWeather(textInput)}>
       <input
       ref={(input) => textInput = input}
       className='form-control'
@@ -16,7 +16,7 @@ const SearchBar = ({ getWeather }) => {
 }
 
 SearchBar.propTypes = {
-  getWeather: React.PropTypes.func
+  fetchWeather: React.PropTypes.func
 }
 
 export default SearchBar;
