@@ -34,12 +34,12 @@ const Forecast = ({ forecast, isFetched }) => {
 
 Forecast.propTypes = {
   forecast: React.PropTypes.arrayOf(React.PropTypes.object),
-  // forecast: React.PropTypes.shape({
-  //   temp: React.PropTypes.number,
-  //   time: React.PropTypes.string,
-  //   winddir: React.PropTypes.string,
-  //   windspd: React.PropTypes.number,
-  // }),
+  forecast: React.PropTypes.arrayOf(React.PropTypes.shape({
+    temp: React.PropTypes.number,
+    time: React.PropTypes.string,
+    winddir: React.PropTypes.string,
+    windspd: React.PropTypes.number,
+  })),
   isFetched: React.PropTypes.bool
 }
 
