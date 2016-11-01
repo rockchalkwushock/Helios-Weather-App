@@ -1,5 +1,4 @@
 import { FETCH_CURRENT_WEATHER } from '../actions/actions';
-import { weatherIcons } from '../conversions/weatherIcons';
 
 const initialState = {
     code: null,

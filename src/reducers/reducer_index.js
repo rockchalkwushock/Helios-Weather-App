@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
 
-import backgroundReducer from './reducer_background';
-import cwImageReducer from './reducer_cw_icon';
+// import backgroundReducer from './reducer_background';
 import currentWeatherReducer from './reducer_current';
+import cwImageReducer from './reducer_cw_icon';
 import forecastReducer from './reducer_forecast';
 
 const rootReducer = combineReducers({
+  // background: backgroundReducer,
   current: currentWeatherReducer,
-  forecast: forecastReducer,
   cw_image: cwImageReducer,
-  background: backgroundReducer
+  forecast: forecastReducer
 });
 
 export default rootReducer;

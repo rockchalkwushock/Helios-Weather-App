@@ -27,17 +27,17 @@ export default(state = initialState, action) => {
             const sunrise = data.sys.sunrise;
             const sunset = data.sys.sunset;
             const newBackground = new Background(IMG_LIBRARY);
-            console.log(newBackground);
+            // console.log(newBackground);
             const hour = newBackground.getTime();
-            console.log('Current Hour: ' + hour);
+            // console.log('Current Hour: ' + hour);
             const sunup = newBackground.convertSunrise(sunrise);
-            console.log('Sunup: ' + sunup);
+            // console.log('Sunup: ' + sunup);
             const sundown = newBackground.convertSunset(sunset);
-            console.log('Sundown: ' + sundown);
+            // console.log('Sundown: ' + sundown);
             const id = newBackground.getIdentifier(hour, sunup, sundown);
-            console.log('Identifier: ' + id);
+            // console.log('Identifier: ' + id);
             const image = newBackground.selectBackground(id);
-            console.log(image);
+            // console.log(image);
             return {
                 ...state,
                 img: image,
