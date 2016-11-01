@@ -16,16 +16,17 @@ The action is received as a promise from the action creator.
 */
 
 export default(state = initialState, action) => {
+  const data = action.payload;
     switch (action.type) {
         case `${FETCH_FORECAST}_PENDING`:
             return {};
         case `${FETCH_FORECAST}_FULFILLED`:
-            const convertedData = action.payload.list.slice(0,5).map(data => {
+            const convertedData = data.list.slice(0,5).map(item => {
           return({
-            time: unitConverter.toGMT(data.dt),
-            temp: unitConverter.toFarenheit(data.main.temp),
-            windspd: unitConverter.toMPH(data.wind.speed),
-            winddir: unitConverter.toCardinal(data.wind.deg)
+            time: unitConverter.toGMT(item.dt),
+            temp: unitConverter.toFarenheit(item.main.temp),
+            windspd: unitConverter.toMPH(item.wind.speed),
+            winddir: unitConverter.toCardinal(item.wind.deg)
           });
         });
             return {
@@ -37,7 +38,7 @@ export default(state = initialState, action) => {
             return {
                 ...state,
                 isFetched: true,
-                err: action.payload
+                err: data
             };
         default:
             return state;

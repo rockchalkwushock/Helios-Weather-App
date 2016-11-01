@@ -1,6 +1,6 @@
 import React, { propTypes } from 'react';
 
-const Header = ({ props, isFetched }) => {
+const Header = ({ props, icon, isFetched }) => {
   if (!isFetched) {
     return (
       <h1>Loading...</h1>
@@ -9,6 +9,7 @@ const Header = ({ props, isFetched }) => {
   return(
     <div className="header">
       <h1>{props.name}</h1>
+      <i className={icon}></i>
       <span><strong>Sunrise:</strong> {props.sunrise} <strong>Sunset:</strong> {props.sunset}</span>
     </div>
   );

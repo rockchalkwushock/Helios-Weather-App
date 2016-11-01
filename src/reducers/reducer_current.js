@@ -1,4 +1,4 @@
-import { CURRENT_WEATHER } from '../actions/actions';
+import { FETCH_CURRENT_WEATHER } from '../actions/actions';
 import { unitConverter } from '../conversions/conversions_2.0';
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
 
 /*
 NOTE:
-Processes the CURRENT_WEATHER Action. Checking Pending, Fulfilled, & Rejected states.
+Processes the FETCH_CURRENT_WEATHER Action. Checking Pending, Fulfilled, & Rejected states.
 Returns an new state object with required data.
 In the case of Fulfilled returns payload converted to imperial standards.
 The action is received as a promise from the action creator.
@@ -18,9 +18,9 @@ The action is received as a promise from the action creator.
 export default(state = initialState, action) => {
   const data = action.payload;
     switch (action.type) {
-        case `${CURRENT_WEATHER}_PENDING`:
+        case `${FETCH_CURRENT_WEATHER}_PENDING`:
             return {};
-        case `${CURRENT_WEATHER}_FULFILLED`:
+        case `${FETCH_CURRENT_WEATHER}_FULFILLED`:
             return {
                 ...state,
                 weatherData: {
@@ -35,7 +35,7 @@ export default(state = initialState, action) => {
                 },
                 isFetched: true
             };
-        case `${CURRENT_WEATHER}_REJECTED`:
+        case `${FETCH_CURRENT_WEATHER}_REJECTED`:
             return {
                 ...state,
                 isFetched: true,

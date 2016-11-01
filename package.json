@@ -7,10 +7,16 @@
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "dev": "webpack-dev-server --content-base build --inline --hot",
     "mkdir": "mkdir -p build",
-    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js",
+    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js",
     "clean": "rm -rf build",
-    "build:html": "npm run clean:html && cp src/static/index.html build/",
+    "build:html": "npm run clean:html && cp public/index.html build/",
     "clean:html": "rm -f build/index.html",
+    "build:css": "npm run build:css:unminified && npm run build:css:minified",
+    "clean:css": "npm run clean:css:unminified && npm run clean:css:minified",
+    "build:css:unminified": "npm run clean:css:unminified && lessc --source-map public/styles.less build/$npm_package_name.$npm_package_version.css",
+    "clean:css:unminified": "rm -f build/$npm_package_name.$npm_package_version.css build/$npm_package_name.$npm_package_version.css.map",
+    "build:css:minified": "npm run clean:css:minified && lessc --clean-css --source-map public/styles.less build/$npm_package_name.$npm_package_version.min.css",
+    "clean:css:minified": "rm -f build/$npm_package_name.$npm_package_version.min.css build/$npm_package_name.$npm_package_version.min.css.map",
     "build:js": "npm run clean:js && webpack",
     "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map"
   },
@@ -40,7 +46,8 @@
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
     "redux-promise": "^0.5.3",
-    "redux-promise-middleware": "^4.1.0"
+    "redux-promise-middleware": "^4.1.0",
+    "weather-icons": "^1.3.2"
   },
   "babel": {
     "presets": [

@@ -5,6 +5,7 @@ import {CONDITIONS} from './CONDITIONS';
 export class Background {
   constructor(IMG_LIBRARY) {
     this.images = IMG_LIBRARY;
+    console.log(this.images);
   }
   getTime() {
     // Returns 24 hour format.
@@ -24,7 +25,7 @@ export class Background {
   getIdentifier(hour, sunup, sundown) {
     // Based on time of day return a unique identifier.
     switch (true) {
-      case ((hour < sunup) && (hour < sundown || hour > sundown)):
+      case (hour > sundown):
         return 'night';
       case ((hour > sunup) && (hour < 12)):
         return 'morning';
@@ -36,6 +37,7 @@ export class Background {
     }
   }
   selectBackground(time) {
+    console.log(this.images.time);
     // Use unique identifier as key to IMG_LIBRARY.
     // NOTE: only using clear condition for time being.
     return this.images.time.clear;
@@ -44,9 +46,9 @@ export class Background {
 
 // Client Side...
 
-// const newBackground = new Background();
-// const hour = newBackground.getTime();
-// const sunup = newBackground.convertSunrise(sunrise);
-// const sundown = newBackground.convertSunset(sunset);
-// const time = newBackground.getIdentifier(hour, sunup, sundown);
-// const image = newBackground.selectBackground(time);
+// let newBackground = new Background();
+// let hour = newBackground.getTime();
+// let sunup = newBackground.convertSunrise(sunrise);
+// let sundown = newBackground.convertSunset(sunset);
+// let time = newBackground.getIdentifier(hour, sunup, sundown);
+// let image = newBackground.selectBackground(time);
