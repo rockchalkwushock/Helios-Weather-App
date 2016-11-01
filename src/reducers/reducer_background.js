@@ -1,4 +1,4 @@
-import { FETCH_BACKGROUND } from '../actions/actions';
+import { FETCH_CURRENT_WEATHER } from '../actions/actions';
 import { Background } from '../additions/background';
 import { IMG_LIBRARY } from '../additions/IMG_LIBRARY';
 
@@ -21,11 +21,11 @@ The action is received as a promise from the action creator.
 export default(state = initialState, action) => {
   const data = action.payload;
     switch (action.type) {
-        case `${FETCH_BACKGROUND}_PENDING`:
+        case `${FETCH_CURRENT_WEATHER}_PENDING`:
             return {};
-        case `${FETCH_BACKGROUND}_FULFILLED`:
-            const sunrise = data.sunrise;
-            const sunset = data.sunset;
+        case `${FETCH_CURRENT_WEATHER}_FULFILLED`:
+            const sunrise = data.sys.sunrise;
+            const sunset = data.sys.sunset;
             const newBackground = new Background(IMG_LIBRARY);
             console.log(newBackground);
             const hour = newBackground.getTime();
@@ -34,16 +34,16 @@ export default(state = initialState, action) => {
             console.log('Sunup: ' + sunup);
             const sundown = newBackground.convertSunset(sunset);
             console.log('Sundown: ' + sundown);
-            const time = newBackground.getIdentifier(hour, sunup, sundown);
-            console.log('Identifier: ' + time);
-            const image = newBackground.selectBackground(time);
+            const id = newBackground.getIdentifier(hour, sunup, sundown);
+            console.log('Identifier: ' + id);
+            const image = newBackground.selectBackground(id);
             console.log(image);
             return {
                 ...state,
                 img: image,
                 isFetched: true
             };
-        case `${FETCH_BACKGROUND}_REJECTED`:
+        case `${FETCH_CURRENT_WEATHER}_REJECTED`:
             return {
                 ...state,
                 isFetched: true,

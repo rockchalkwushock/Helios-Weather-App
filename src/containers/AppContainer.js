@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchBackground, fetchCurrentWeather, fetchForecast, fetchCurrentWeatherIcon } from '../actions/actions';
+import { fetchCurrentWeather, fetchForecast } from '../actions/actions';
 
 
 import CurrentWeather from '../components/CurrentWeather';
@@ -18,8 +18,6 @@ class AppContainer extends Component {
   _weatherSearch(input) {
     this.props.fetchCurrentWeather(input.value);
     this.props.fetchForecast(input.value);
-    this.props.fetchCurrentWeatherIcon(input.value);
-    this.props.fetchBackground(input.value);
     input.value = '';
   	}
 
@@ -27,7 +25,7 @@ class AppContainer extends Component {
     const getWeather = term => { this._weatherSearch(term); };
     const { current, forecast, cw_image } = this.props;
     return (
-      <div className="application container">
+      <div className="application">
         <SearchBar getWeather={ getWeather } />
         <Header props={ current.weatherData } icon={ cw_image.icon } isFetched={ current.isFetched }/>
         {Boolean(current) && <CurrentWeather weather={ current.weatherData } isFetched={ current.isFetched }/>}
@@ -37,9 +35,9 @@ class AppContainer extends Component {
   }
 }
 
+// NOTE: Reducers having new state mapped to props of AppContainer.
 const mapStateToProps = ({ background, current, forecast, cw_image }) => {
   return { background, current, forecast, cw_image };
 };
 
-export default connect(mapStateToProps,
-  { fetchBackground, fetchCurrentWeather, fetchForecast, fetchCurrentWeatherIcon })(AppContainer);
+export default connect(mapStateToProps, { fetchCurrentWeather, fetchForecast })(AppContainer);

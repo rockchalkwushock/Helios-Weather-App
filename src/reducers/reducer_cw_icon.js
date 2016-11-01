@@ -1,4 +1,4 @@
-import { FETCH_CW_ICON } from '../actions/actions';
+import { FETCH_CURRENT_WEATHER } from '../actions/actions';
 import { weatherIcons } from '../conversions/weatherIcons';
 
 const initialState = {
@@ -16,19 +16,18 @@ The action is received as a promise from the action creator.
 export default(state = initialState, action) => {
   const data = action.payload;
     switch (action.type) {
-        case `${FETCH_CW_ICON}_PENDING`:
+        case `${FETCH_CURRENT_WEATHER}_PENDING`:
             return {};
-        case `${FETCH_CW_ICON}_FULFILLED`:
-        const prefix = 'wi-owm-';
-        const code = data;
-        let icon = weatherIcons.codeToIcon(code);
-        icon = prefix + icon;
+        case `${FETCH_CURRENT_WEATHER}_FULFILLED`:
+        const prefix = 'wi wi-owm-';
+        const code = data.weather[0].id;
+        let icon = prefix + code;
             return {
                 ...state,
                 icon,
                 isFetched: true
             };
-        case `${FETCH_CW_ICON}_REJECTED`:
+        case `${FETCH_CURRENT_WEATHER}_REJECTED`:
             return {
                 ...state,
                 isFetched: true,

@@ -8,8 +8,7 @@ const Header = ({ props, icon, isFetched }) => {
   }
   return(
     <div className="header">
-      <h1>{props.name}</h1>
-      <i className={icon}></i>
+      <span><h1>{props.name}</h1><i className={icon}></i></span>
       <span><strong>Sunrise:</strong> {props.sunrise} <strong>Sunset:</strong> {props.sunset}</span>
     </div>
   );

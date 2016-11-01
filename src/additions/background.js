@@ -19,9 +19,6 @@ export class Background {
     // converts UTC to GMT & returns hour.
     return new Date(sunset * 1000).getHours();
   }
-  changeBackground() {
-    // Here the background will be changed.
-  }
   getIdentifier(hour, sunup, sundown) {
     // Based on time of day return a unique identifier.
     switch (true) {
@@ -36,11 +33,12 @@ export class Background {
       default: return 'stock';
     }
   }
-  selectBackground(time) {
-    console.log(this.images.time);
+  selectBackground(id) {
+    console.log(`this.images.${id}`);
+    console.log(this.images.morning);
     // Use unique identifier as key to IMG_LIBRARY.
     // NOTE: only using clear condition for time being.
-    return this.images.time.clear;
+    return this.images.morning.clear;
   }
 }
 
@@ -50,5 +48,5 @@ export class Background {
 // let hour = newBackground.getTime();
 // let sunup = newBackground.convertSunrise(sunrise);
 // let sundown = newBackground.convertSunset(sunset);
-// let time = newBackground.getIdentifier(hour, sunup, sundown);
-// let image = newBackground.selectBackground(time);
+// let id = newBackground.getIdentifier(hour, sunup, sundown);
+// let image = newBackground.selectBackground(id);
