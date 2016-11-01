@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBackground, fetchCurrentWeather, fetchForecast, fetchCurrentWeatherIcon } from '../actions/actions';
@@ -15,6 +14,7 @@ class AppContainer extends Component {
 
   }
 
+  // NOTE: All actions are processed here.
   _weatherSearch(input) {
     this.props.fetchCurrentWeather(input.value);
     this.props.fetchForecast(input.value);
@@ -24,10 +24,10 @@ class AppContainer extends Component {
   	}
 
   render() {
-    const getWeather = _.debounce(term => { this._weatherSearch(term); }, 300);
+    const getWeather = term => { this._weatherSearch(term); };
     const { current, forecast, cw_image } = this.props;
     return (
-      <div className="application">
+      <div className="application container">
         <SearchBar getWeather={ getWeather } />
         <Header props={ current.weatherData } icon={ cw_image.icon } isFetched={ current.isFetched }/>
         {Boolean(current) && <CurrentWeather weather={ current.weatherData } isFetched={ current.isFetched }/>}

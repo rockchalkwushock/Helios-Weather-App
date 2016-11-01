@@ -25,13 +25,13 @@ export class Background {
   getIdentifier(hour, sunup, sundown) {
     // Based on time of day return a unique identifier.
     switch (true) {
-      case (hour > sundown):
+      case (hour > sundown || hour < sunup):
         return 'night';
-      case ((hour > sunup) && (hour < 12)):
+      case ((hour => sunup) && (hour < 12)):
         return 'morning';
-      case ((hour > 12) && (hour < 16)):
+      case ((hour => 12) && (hour <= 16)):
         return 'afternoon';
-      case ((hour > 16) && (hour < sundown)):
+      case ((hour > 16) && (hour <= sundown)):
         return 'evening';
       default: return 'stock';
     }
