@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import BackgroundContainer from '../containers/BackgroundContainer';
-import HeaderContainer from '../containers/HeaderContainer';
-import SearchBarContainer from '../containers/SearchBarContainer';
+import { BackgroundContainer, HeaderContainer, SearchBarContainer} from '../containers/MyContainers';
 
 
 export default class App extends Component {

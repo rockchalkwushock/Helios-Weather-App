@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentWeather, fetchForecast } from '../actions/actions';
 
-import SearchBar from '../components/SearchBar';
+import { SearchBar } from '../components/MyComponents';
 
 class SearchBarContainer extends Component {
 

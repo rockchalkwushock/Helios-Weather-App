@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Forecast from '../components/Forecast';
+import { Forecast } from '../components/MyComponents';
 
 class ForecastContainer extends Component {
   render() {

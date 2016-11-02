@@ -1,13 +1,5 @@
-import React from 'react';
-
-import CurrentWeather from './CurrentWeather';
-import Forecast from './Forecast';
-import Header from './Header';
-import SearchBar from './SearchBar';
-
-export default {
-  CurrentWeather,
-  Forecast,
-  Header,
-  SearchBar
-};
+export App from './App';
+export CurrentWeather from './CurrentWeather';
+export Forecast from './Forecast';
+export Header from './Header';
+export SearchBar from './SearchBar';

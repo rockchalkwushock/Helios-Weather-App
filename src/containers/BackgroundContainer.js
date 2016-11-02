@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import CurrentWeatherContainer from './CurrentWeatherContainer';
-import ForecastContainer from './ForecastContainer';
+import { CurrentWeatherContainer, ForecastContainer } from './MyContainers';
 
 class BackgroundContainer extends Component {
 
-
-  render() {
-    const { image } = this.props.background;
-    return (
-      <div id='BackgroundContainer' className={image}>
-        <CurrentWeatherContainer />
-        <ForecastContainer />
-      </div>
-    );
-  }
+    render() {
+        const { image } = this.props.background;
+        return (
+            <div id='BackgroundContainer' >
+                <div className={ image }>
+                    <CurrentWeatherContainer/>
+                    <ForecastContainer/>
+                </div>
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = ({ background }) => {
-  return { background };
+    return { background };
 };
 
 export default connect(mapStateToProps)(BackgroundContainer);

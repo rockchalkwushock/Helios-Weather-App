@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import CurrentWeather from '../components/CurrentWeather';
+import { CurrentWeather } from '../components/MyComponents';
 
 class CurrentWeatherContainer extends Component {
   render() {
