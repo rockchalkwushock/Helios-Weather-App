@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import CurrentWeatherContainer from '../containers/CurrentWeatherContainer';
-import ForecastContainer from '../containers/ForecastContainer';
+import BackgroundContainer from '../containers/BackgroundContainer';
 import HeaderContainer from '../containers/HeaderContainer';
 import SearchBarContainer from '../containers/SearchBarContainer';
 
@@ -12,8 +11,7 @@ export default class App extends Component {
       <div className='test'>
         <SearchBarContainer />
         <HeaderContainer />
-        <CurrentWeatherContainer />
-        <ForecastContainer />
+        <BackgroundContainer />
       </div>
     );
   }

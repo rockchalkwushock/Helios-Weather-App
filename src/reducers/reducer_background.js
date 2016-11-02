@@ -1,6 +1,6 @@
 import { FETCH_CURRENT_WEATHER } from '../actions/actions';
-import { Background } from '../additions/background';
-import { IMG_LIBRARY } from '../additions/IMG_LIBRARY';
+import { changeAppBackground } from '../conversions/background';
+import { weatherConditionCheck } from '../conversions/conditions';
 
 const initialState = {
     img: null,
@@ -25,22 +25,26 @@ export default(state = initialState, action) => {
             return {};
         case `${FETCH_CURRENT_WEATHER}_FULFILLED`:
             const sunrise = data.sys.sunrise;
+            console.log(sunrise);
             const sunset = data.sys.sunset;
-            const newBackground = new Background(IMG_LIBRARY);
-            // console.log(newBackground);
-            const hour = newBackground.getTime();
-            // console.log('Current Hour: ' + hour);
-            const sunup = newBackground.convertSunrise(sunrise);
-            // console.log('Sunup: ' + sunup);
-            const sundown = newBackground.convertSunset(sunset);
-            // console.log('Sundown: ' + sundown);
-            const id = newBackground.getIdentifier(hour, sunup, sundown);
-            // console.log('Identifier: ' + id);
-            const image = newBackground.selectBackground(id);
-            // console.log(image);
+            console.log(sunset);
+            const code = data.weather[0].id;
+            console.log(code);
+            const condition = weatherConditionCheck.codeToIdentifier(code);
+            console.log(condition);
+            const time = changeAppBackground.getTime();
+            console.log(time);
+            const sunup = changeAppBackground.convertSunrise(sunrise);
+            console.log(sunup);
+            const sundown = changeAppBackground.convertSunset(sunset);
+            console.log(sundown);
+            const id = changeAppBackground.getIdentifier(time, sunup, sundown);
+            console.log(id);
+            const image = changeAppBackground.setBackground(id, condition);
+            console.log(image);
             return {
                 ...state,
-                img: image,
+                image,
                 isFetched: true
             };
         case `${FETCH_CURRENT_WEATHER}_REJECTED`:
