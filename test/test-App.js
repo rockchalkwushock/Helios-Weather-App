@@ -20,7 +20,7 @@ describe('<App />', () => {
   });
   it('should have four children', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('Navbar')).to.have.length(0);
+    expect(wrapper.find('Navbar')).to.have.length(1);
     expect(wrapper.find('SearchBarContainer')).to.have.length(0);
     expect(wrapper.find('HeaderContainer')).to.have.length(0);
     expect(wrapper.find('BackgroundContainer')).to.have.length(0);
