@@ -3,6 +3,7 @@ import { API_KEY, CURRENT_ROOT_URL, FORECAST_ROOT_URL } from '../config';
 
 export const FETCH_CURRENT_WEATHER = 'FETCH_CURRENT_WEATHER';
 export const FETCH_FORECAST = 'FETCH_FORECAST';
+export const FETCH_BACKGROUND = 'FETCH_BACKGROUND';
 
 // NOTE: Fetches the api data for Current Weather.
 export const fetchCurrentWeather = (city) => {
@@ -29,6 +30,21 @@ export const fetchForecast = (city) => {
   });
   return {
     type: FETCH_FORECAST,
+    payload: promise
+  };
+};
+
+// NOTE: Fetches data needed for updating background image.
+export const fetchBackground = (city) => {
+  const url = `${CURRENT_ROOT_URL}&q=${city},us`;
+  const promise = new Promise((resolve, reject) => {
+    axios.get(url)
+         .then(res => resolve(res.data))
+         .catch(err => reject(err));
+
+  });
+  return {
+    type: FETCH_BACKGROUND,
     payload: promise
   };
 };

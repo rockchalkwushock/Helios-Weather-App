@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrentWeather, fetchForecast } from '../actions/actions';
+import { fetchCurrentWeather, fetchBackground, fetchForecast } from '../actions/actions';
 
 import { SearchBar } from '../components/MyComponents';
 
@@ -8,6 +8,7 @@ class SearchBarContainer extends Component {
 
   _weatherSearch(input) {
     this.props.fetchCurrentWeather(input.value);
+    this.props.fetchBackground(input.value);
     this.props.fetchForecast(input.value);
     input.value = '';
   	}
@@ -18,4 +19,4 @@ class SearchBarContainer extends Component {
   }
 }
 
-export default connect(null, { fetchCurrentWeather, fetchForecast })(SearchBarContainer);
+export default connect(null, { fetchCurrentWeather, fetchBackground, fetchForecast })(SearchBarContainer);

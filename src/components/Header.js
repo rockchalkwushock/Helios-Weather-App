@@ -1,6 +1,6 @@
 import React, { propTypes } from 'react';
 
-const Header = ({ props, icon, isFetched }) => {
+const Header = ({ isFetched, weather }) => {
   if (!isFetched) {
     return (
       <h1>Loading...</h1>
@@ -8,16 +8,16 @@ const Header = ({ props, icon, isFetched }) => {
   }
   return(
     <div className="header">
-      <span><h1>{props.name}</h1><i className={icon}></i></span>
-      <span><strong>Sunrise:</strong> {props.sunrise} <strong>Sunset:</strong> {props.sunset}</span>
+      <span><h1>{weather.name}</h1><i className={weather.icon}></i></span>
+      <span><i className='wi wi-sunrise'></i> {weather.sunrise} <i className='wi wi-sunset'></i> {weather.sunset}</span>
     </div>
   );
 }
 
 Header.propTypes = {
   isFetched: React.PropTypes.bool,
-  props: React.PropTypes.object,
-  props: React.PropTypes.shape({
+  weather: React.PropTypes.object,
+  weather: React.PropTypes.shape({
     name: React.PropTypes.string,
     sunrise: React.PropTypes.string,
     sunset: React.PropTypes.string,

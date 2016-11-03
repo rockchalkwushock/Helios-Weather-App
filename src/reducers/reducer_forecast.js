@@ -2,9 +2,9 @@ import { FETCH_FORECAST } from '../actions/actions';
 import { unitConverter } from '../conversions/conversions_2.0';
 
 const initialState = {
+    err: null,
     hourlyforecast: [],
-    isFetched: false,
-    err: null
+    isFetched: false,  
 };
 
 /*
@@ -22,11 +22,17 @@ export default(state = initialState, action) => {
             return {};
         case `${FETCH_FORECAST}_FULFILLED`:
             const convertedData = data.list.slice(0,5).map(item => {
+              let code = item.weather[0].id;
+              let deg = parseInt(item.wind.deg);
+              let icon = 'wi wi-owm-' + code;
+              let windicon = 'wi wi-wind from-' + deg + '-deg';
           return({
+            icon,
             time: unitConverter.toGMT(item.dt),
             temp: unitConverter.toFarenheit(item.main.temp),
-            windspd: unitConverter.toMPH(item.wind.speed),
-            winddir: unitConverter.toCardinal(item.wind.deg)
+            winddir: unitConverter.toCardinal(item.wind.deg),
+            windicon,
+            windspd: unitConverter.toMPH(item.wind.speed)
           });
         });
             return {

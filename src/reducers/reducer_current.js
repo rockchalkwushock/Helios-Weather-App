@@ -2,9 +2,10 @@ import { FETCH_CURRENT_WEATHER } from '../actions/actions';
 import { unitConverter } from '../conversions/conversions_2.0';
 
 const initialState = {
-    weatherData: {},
-    isFetched: false,
+    code: null,
     err: null,
+    isFetched: false,
+    weatherData: {}
 };
 
 /*
@@ -21,16 +22,23 @@ export default(state = initialState, action) => {
         case `${FETCH_CURRENT_WEATHER}_PENDING`:
             return {};
         case `${FETCH_CURRENT_WEATHER}_FULFILLED`:
+        const prefix = 'wi wi-owm-';
+        const code = data.weather[0].id;
+        const deg = data.wind.deg;
+        const icon = prefix + code;
+        const windicon = 'wi wi-wind from-' + deg + '-deg';
             return {
                 ...state,
                 weatherData: {
                   humidity: data.main.humidity,
-                  pressure: unitConverter.toInchesHG(data.main.pressure),
+                  icon,
                   name: data.name,
+                  pressure: unitConverter.toInchesHG(data.main.pressure),
                   sunrise: unitConverter.toGMT(data.sys.sunrise),
                   sunset: unitConverter.toGMT(data.sys.sunset),
                   temp: unitConverter.toFarenheit(data.main.temp),
                   winddir: unitConverter.toCardinal(data.wind.deg),
+                  windicon,
                   windspd: unitConverter.toMPH(data.wind.speed)
                 },
                 isFetched: true

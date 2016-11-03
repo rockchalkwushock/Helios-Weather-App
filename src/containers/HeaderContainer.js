@@ -6,15 +6,14 @@ import { Header } from '../components/MyComponents';
 class HeaderContainer extends Component {
   render() {
     const { isFetched, weatherData } = this.props.current;
-    const { icon } = this.props.cw_image;
     return (
-      <Header props={ weatherData } icon={ icon } isFetched={ isFetched }/>
+      <Header weather={ weatherData } isFetched={ isFetched }/>
     );
   }
 }
 
-const mapStateToProps = ({ current, cw_image }) => {
-  return { current, cw_image };
+const mapStateToProps = ({ current }) => {
+  return { current };
 };
 
 export default connect(mapStateToProps)(HeaderContainer);

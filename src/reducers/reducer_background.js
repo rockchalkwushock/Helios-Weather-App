@@ -1,4 +1,4 @@
-import { FETCH_CURRENT_WEATHER } from '../actions/actions';
+import { FETCH_BACKGROUND } from '../actions/actions';
 import { changeAppBackground } from '../conversions/background';
 import { weatherConditionCheck } from '../conversions/conditions';
 
@@ -21,33 +21,24 @@ The action is received as a promise from the action creator.
 export default(state = initialState, action) => {
   const data = action.payload;
     switch (action.type) {
-        case `${FETCH_CURRENT_WEATHER}_PENDING`:
+        case `${FETCH_BACKGROUND}_PENDING`:
             return {};
-        case `${FETCH_CURRENT_WEATHER}_FULFILLED`:
+        case `${FETCH_BACKGROUND}_FULFILLED`:
             const sunrise = data.sys.sunrise;
-            console.log(sunrise);
             const sunset = data.sys.sunset;
-            console.log(sunset);
             const code = data.weather[0].id;
-            console.log(code);
             const condition = weatherConditionCheck.codeToIdentifier(code);
-            console.log(condition);
             const time = changeAppBackground.getTime();
-            console.log(time);
             const sunup = changeAppBackground.convertSunrise(sunrise);
-            console.log(sunup);
             const sundown = changeAppBackground.convertSunset(sunset);
-            console.log(sundown);
             const id = changeAppBackground.getIdentifier(time, sunup, sundown);
-            console.log(id);
             const image = changeAppBackground.setBackground(id, condition);
-            console.log(image);
             return {
                 ...state,
                 image,
                 isFetched: true
             };
-        case `${FETCH_CURRENT_WEATHER}_REJECTED`:
+        case `${FETCH_BACKGROUND}_REJECTED`:
             return {
                 ...state,
                 isFetched: true,
