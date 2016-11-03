@@ -1,5 +1,5 @@
 import { FETCH_FORECAST } from '../actions/actions';
-import { unitConverter } from '../conversions/conversions_2.0';
+import { unitConverter } from '../local_modules/conversions';
 
 const initialState = {
     err: null,

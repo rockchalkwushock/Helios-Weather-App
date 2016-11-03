@@ -1,5 +1,5 @@
 import { FETCH_CURRENT_WEATHER } from '../actions/actions';
-import { unitConverter } from '../conversions/conversions_2.0';
+import { unitConverter } from '../local_modules/conversions';
 
 const initialState = {
     code: null,

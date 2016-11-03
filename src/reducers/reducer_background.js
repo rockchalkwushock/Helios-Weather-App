@@ -1,6 +1,6 @@
 import { FETCH_BACKGROUND } from '../actions/actions';
-import { changeAppBackground } from '../conversions/background';
-import { weatherConditionCheck } from '../conversions/conditions';
+import { changeAppBackground } from '../local_modules/background';
+import { weatherConditionCheck } from '../local_modules/conditions';
 
 const initialState = {
     img: null,
