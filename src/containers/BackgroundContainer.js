@@ -9,7 +9,7 @@ class BackgroundContainer extends Component {
         const { image } = this.props.background;
         return (
             <div id='BackgroundContainer' >
-                <div className={ image }>
+                <div className={`background ${image}`}>
                     <CurrentWeatherContainer/>
                     <ForecastContainer/>
                 </div>

@@ -24,6 +24,56 @@ html, body {
   margin: 0, auto;
   padding: 0;
   overflow: hidden;
+  background-color: black;
+  max-height: 100%;
+  max-height: 100%;
+}
+
+#app {
+
+}
+
+.test {
+
+}
+
+nav {
+  background-color: black;
+}
+
+.searchbar {
+
+}
+
+.header {
+  background-color: black;
+  padding-left: 0.5em;
+  color: yellow;
+}
+
+#BackgroundContainer {
+
+}
+
+// div that contains current weather & forecast
+
+.weather {
+
+}
+
+.forecast {
+
+}
+
+
+
+
+
+
+
+
+a {
+  color: yellow;
 }
 
 i {
@@ -31,10 +81,7 @@ i {
   width: 50px;
 }
 
-.header {
-  background-color: antiquewhite;
-  padding-left: 0.5em;
-}
+
 
 table {
   background-color: white;
@@ -44,61 +91,65 @@ table {
 
 
 
-#BackgroundContainer {
+.background {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  .afternoon-clear {
+  webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  
+  &.afternoon-clear {
     background-image: @a-clear;
 
   }
-  .afternoon-cloudy {
+  &.afternoon-cloudy {
     background-image: @a-cloudy;
   }
-  .afternoon-rain {
+  &.afternoon-rain {
     background-image: @a-rain;
   }
-  .afternoon-snow {
+  &.afternoon-snow {
     background-image: @a-snow;
   }
-  .evening-clear {
+  &.evening-clear {
     background-image: @e-clear;
   }
-  .evening-cloudy {
+  &.evening-cloudy {
     background-image: @e-cloudy;
   }
-  .evening-rain {
+  &.evening-rain {
     background-image: @e-rain;
   }
-  .evening-snow {
+  &.evening-snow {
     background-image: @e-snow;
   }
-  .morning-clear {
+  &.morning-clear {
     background-image: @m-clear;
   }
-  .morning-cloudy {
+  &.morning-cloudy {
     background-image: @m-cloudy;
   }
-  .morning-rain {
+  &.morning-rain {
     background-image: @m-rain;
   }
-  .morning-snow {
+  &.morning-snow {
     background-image: @m-snow;
   }
-  .night-clear {
+  &.night-clear {
     background-image: @n-clear;
   }
-  .night-cloudy {
+  &.night-cloudy {
     background-image: @n-cloudy;
   }
-  .night-rain {
+  &.night-rain {
     background-image: @n-rain;
   }
-  .night-snow {
+  &.night-snow {
     background-image: @n-snow;
   }
-  .stock {
+  &.stock {
     background-image: @stock;
   }
 }

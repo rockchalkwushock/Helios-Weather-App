@@ -7,7 +7,7 @@ const CurrentWeather = ({ weather, isFetched }) => {
     );
   }
     return (
-        <table className="table table-reflow">
+        <table className="table table-reflow weather">
             <thead>
                 <tr>
                     <th>Temperature</th>

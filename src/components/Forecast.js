@@ -18,7 +18,7 @@ const Forecast = ({ forecast, isFetched }) => {
   })
 
   return (
-    <table className="table table-hover">
+    <table className="table table-hover forecast">
       <thead>
         <tr>
           <td>Time</td>
