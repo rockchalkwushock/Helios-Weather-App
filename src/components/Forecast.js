@@ -10,8 +10,10 @@ const Forecast = ({ forecast, isFetched }) => {
     return(
       <tr key={data.time}>
         <td>{data.time}</td>
+        <td>weather graphic here</td>
         <td>{data.temp} F</td>
         <td>{data.windspd} MPH {data.winddir}</td>
+        <td>wind direction graphic here</td>
       </tr>
     );
   })
@@ -21,8 +23,10 @@ const Forecast = ({ forecast, isFetched }) => {
       <thead>
         <tr>
           <td>Time</td>
+          <td></td>
           <td>Temp</td>
           <td>Wind</td>
+          <td></td>
         </tr>
       </thead>
       <tbody>
