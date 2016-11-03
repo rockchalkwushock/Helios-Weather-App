@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { BackgroundContainer, HeaderContainer, SearchBarContainer} from '../containers/MyContainers';
+import { ButtonContainer, HeaderContainer, SearchBarContainer} from '../containers/MyContainers';
 import { Navbar } from './MyComponents';
 
 export default class App extends Component {
@@ -10,7 +10,7 @@ export default class App extends Component {
         <Navbar />
         <SearchBarContainer />
         <HeaderContainer />
-        <BackgroundContainer />
+        <ButtonContainer />
       </div>
     );
   }

@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
         <div className="container-fluid">
-            <div className="navbar-header">
+            <div className="navbar-header heading">
               <a className="navbar-brand" href="#">Helios Weather</a>
             </div>
         </div>

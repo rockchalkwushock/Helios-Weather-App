@@ -1,14 +1,16 @@
 import React, { propTypes } from 'react';
 
+import { Load } from './MyComponents';
+
 const Header = ({ isFetched, weather }) => {
   if (!isFetched) {
     return (
-      <h1>Loading...</h1>
+      <Load />
     );
   }
   return(
-    <div className="header">
-      <span><h1>{weather.name}</h1><i className={weather.icon}></i></span>
+    <div className='row header'>
+      <h1>{weather.name}</h1>
       <span><i className='wi wi-sunrise'></i> {weather.sunrise} <i className='wi wi-sunset'></i> {weather.sunset}</span>
     </div>
   );

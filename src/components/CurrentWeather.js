@@ -1,11 +1,6 @@
 import React, { propTypes } from 'react';
 
-const CurrentWeather = ({ weather, isFetched }) => {
-  if (!isFetched) {
-    return (
-      <h1>Loading...</h1>
-    );
-  }
+const CurrentWeather = ({ weather }) => {
     return (
         <table className="table table-reflow weather">
             <thead>
@@ -18,7 +13,7 @@ const CurrentWeather = ({ weather, isFetched }) => {
             </thead>
             <tbody>
                 <tr>
-                    <td>{ weather.temp } <i className=' wi wi-fahrenheit'></i></td>
+                    <td>{ weather.temp } <i className='wi wi-fahrenheit'></i></td>
                     <td>{ weather.pressure } <i className='wi wi-barometer'></i></td>
                     <td>{ weather.humidity } <i className='wi wi-humidity'></i></td>
                     <td>{ weather.windspd }mph { weather.winddir }</td>
