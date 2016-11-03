@@ -19,9 +19,9 @@ const CurrentWeather = ({ weather, isFetched }) => {
             <tbody>
                 <tr>
                     <td>{ weather.temp } <i className=' wi wi-fahrenheit'></i></td>
-                    <td>{ weather.pressure }" <i className='wi wi-barometer'></i></td>
+                    <td>{ weather.pressure } <i className='wi wi-barometer'></i></td>
                     <td>{ weather.humidity } <i className='wi wi-humidity'></i></td>
-                    <td>{ weather.windspd }mph { weather.winddir } <i className={weather.windicon}></i></td>
+                    <td>{ weather.windspd }mph { weather.winddir }</td>
                 </tr>
             </tbody>
         </table>

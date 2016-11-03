@@ -69,7 +69,7 @@ export const changeAppBackground = {
       case ((timeOfDay === 'night') && (weatherCondition === 'snow')):
       return 'night-snow';
       default:
-      return document.body = 'stock';
+      return 'stock';
     }
   }
 };

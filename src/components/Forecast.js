@@ -1,6 +1,6 @@
 import React, { propTypes } from 'react';
 
-const Forecast = ({ forecast, icons, isFetched }) => {
+const Forecast = ({ forecast, isFetched }) => {
   if (!isFetched) {
     return (
       <h1>Loading...</h1>
@@ -13,7 +13,6 @@ const Forecast = ({ forecast, icons, isFetched }) => {
         <td><i className={data.icon}></i></td>
         <td>{data.temp} F</td>
         <td>{data.windspd} MPH {data.winddir}</td>
-        <td><i className={data.windicon}></i></td>
       </tr>
     );
   })
@@ -26,7 +25,6 @@ const Forecast = ({ forecast, icons, isFetched }) => {
           <td></td>
           <td>Temp</td>
           <td>Wind</td>
-          <td></td>
         </tr>
       </thead>
       <tbody>

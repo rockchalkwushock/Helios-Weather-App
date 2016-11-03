@@ -4,7 +4,7 @@ import { unitConverter } from '../conversions/conversions_2.0';
 const initialState = {
     err: null,
     hourlyforecast: [],
-    isFetched: false,  
+    isFetched: false,
 };
 
 /*
@@ -23,15 +23,12 @@ export default(state = initialState, action) => {
         case `${FETCH_FORECAST}_FULFILLED`:
             const convertedData = data.list.slice(0,5).map(item => {
               let code = item.weather[0].id;
-              let deg = parseInt(item.wind.deg);
               let icon = 'wi wi-owm-' + code;
-              let windicon = 'wi wi-wind from-' + deg + '-deg';
           return({
             icon,
             time: unitConverter.toGMT(item.dt),
             temp: unitConverter.toFarenheit(item.main.temp),
             winddir: unitConverter.toCardinal(item.wind.deg),
-            windicon,
             windspd: unitConverter.toMPH(item.wind.speed)
           });
         });

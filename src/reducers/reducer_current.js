@@ -24,9 +24,7 @@ export default(state = initialState, action) => {
         case `${FETCH_CURRENT_WEATHER}_FULFILLED`:
         const prefix = 'wi wi-owm-';
         const code = data.weather[0].id;
-        const deg = data.wind.deg;
         const icon = prefix + code;
-        const windicon = 'wi wi-wind from-' + deg + '-deg';
             return {
                 ...state,
                 weatherData: {
@@ -38,7 +36,6 @@ export default(state = initialState, action) => {
                   sunset: unitConverter.toGMT(data.sys.sunset),
                   temp: unitConverter.toFarenheit(data.main.temp),
                   winddir: unitConverter.toCardinal(data.wind.deg),
-                  windicon,
                   windspd: unitConverter.toMPH(data.wind.speed)
                 },
                 isFetched: true
