@@ -57,6 +57,41 @@ nav {
   input  {
     height: 100%;
     vertical-align: middle;
+    border-color: yellow;
+    background: black;
+  }
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: yellow;
+  }
+  input::-moz-placeholder { /* Firefox 19+ */
+    color: yellow;
+  }
+  input:-ms-input-placeholder { /* IE 10+ */
+    color: yellow;
+  }
+  input:-moz-placeholder { /* Firefox 18- */
+    color: yellow;
+  }
+  input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black;
+  }
+  input:focus::-moz-placeholder { /* Firefox 19+ */
+    color: black;
+  }
+  input:focus:-ms-input-placeholder { /* IE 10+ */
+    color: black;
+  }
+  input:focus:-moz-placeholder { /* Firefox 18- */
+    color: black;
+  }
+  .form-control {
+    color: yellow;
+    background-color: black;
+  }
+  .form-control:focus {
+    color: black;
+    background-color: yellow;
+    border-color: black;
   }
   span {
     height: 100%;
@@ -64,9 +99,24 @@ nav {
     button {
       height: 100%;
       vertical-align: top;
+      color: yellow;
+      background-color: black;
+      border-color: yellow;
+    }
+    button:hover {
+      color: black;
+      background-color: yellow;
+      border-color: black;
+    }
+    button:focus:active {
+      color: yellow;
+      background-color: black;
+      border-color: yellow;
     }
   }
 }
+
+
 
 .header {
   background-color: black;

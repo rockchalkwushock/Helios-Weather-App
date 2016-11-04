@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
         <div className="container-fluid">
             <div className="navbar-header heading">
-              <a className="navbar-brand" href="#">Helios Weather</a>
+              <a className="navbar-brand" href="/?#">Helios Weather</a>
             </div>
         </div>
    </nav>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { ButtonContainer, HeaderContainer, SearchBarContainer} from '../containers/MyContainers';
-import { Navbar } from './MyComponents';
+import { SearchBarContainer } from '../containers/MyContainers';
+import { Dashboard, Navbar } from './MyComponents';
 
 export default class App extends Component {
   render() {
@@ -9,8 +9,7 @@ export default class App extends Component {
       <div className='test'>
         <Navbar />
         <SearchBarContainer />
-        <HeaderContainer />
-        <ButtonContainer />
+        {this.props.children}
       </div>
     );
   }
