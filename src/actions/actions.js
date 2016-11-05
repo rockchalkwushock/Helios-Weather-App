@@ -13,7 +13,7 @@ export const fetchCurrentWeather = (city) => {
     axios.get(url)
          .then(res => {
            const data = res.data;
-           const prefix = 'wi wi-own-';
+           const prefix = 'wi wi-owm-';
            const code = data.weather[0].id;
            const icon = prefix + code;
            const weatherData = {
@@ -61,7 +61,6 @@ export const fetchForecast = (city) => {
          })
          .catch(err => reject(err));
   });
-  console.log(promise);
   return {
     type: FETCH_FORECAST,
     payload: promise

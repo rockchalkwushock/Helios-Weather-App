@@ -87,9 +87,9 @@ nav {
   .form-control {
     color: yellow;
     background-color: black;
-  }
-  .form-control:focus {
-    border-color: yellow;
+    &:focus {
+      border-color: yellow;
+    }
   }
   span {
     height: 100%;
@@ -100,16 +100,16 @@ nav {
       color: yellow;
       background-color: black;
       border-color: yellow;
-    }
-    button:hover {
-      color: black;
-      background-color: yellow;
-      border-color: black;
-    }
-    button:focus:active {
-      color: yellow;
-      background-color: black;
-      border-color: yellow;
+      &:hover {
+        color: black;
+        background-color: yellow;
+        border-color: black;
+      }
+      &:focus:active {
+        color: yellow;
+        background-color: black;
+        border-color: yellow;
+      }
     }
   }
 }
@@ -129,28 +129,53 @@ nav {
 .weather-link {
   text-align: center;
   .button-link {
-    color: yellow;
     background-color: black;
     border-color: yellow;
     h1 {
+      color: yellow;
       margin-top: 0.5rem;
+      i {
+        color: yellow;
+      }
+    }
+    &:hover {
+      background-color: yellow;
+      border-color: black;
+      h1 {
+        color: black;
+        margin-top: 0.5rem;
+        i {
+          color: black;
+        }
+      }
+    }
+    &:focus:active:visited {
+      background-color: black;
+      border-color: yellow;
+      h1 {
+        color: yellow;
+        margin-top: 0.5rem;
+        i {
+          color: yellow;
+        }
+      }
     }
   }
 }
-.button-link:hover {
-  color: black;
-  background-color: yellow;
-  border-color: black;
-}
-.button-link:focus:active:visited {
-  color: yellow !important;
-  background-color: black;
-  border-color: yellow;
+
+
+
+.navbar-brand {
+    color: yellow;
+    &:hover {
+      color: yellow;
+      font-size: 1.5rem;
+    }
+    &:visited {
+      color: yellow;
+    }
 }
 
-a {
-  color: yellow;
-}
 
 i {
   height: 50px;
