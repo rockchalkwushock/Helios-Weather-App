@@ -9,7 +9,7 @@ export default class App extends Component {
       <div className='test'>
         <Navbar />
         <SearchBarContainer />
-        {this.props.children}
+        <Dashboard />
       </div>
     );
   }
