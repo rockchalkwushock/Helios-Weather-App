@@ -9,6 +9,8 @@ const CW_Button = ({ weather, isFetched }) => {
             <Load />
         );
     }
+    console.log(weather.icon);
+    console.log(weather.temp);
     return (
       <Link to='/dashboard' className='btn btn-primary button-link'>
             <h1>

@@ -1,5 +1,4 @@
-import { FETCH_FORECAST } from '../actions/actions';
-import { unitConverter } from '../local_modules/conversions';
+import { FETCH_FORECAST } from '../actions/ActionTypes';
 
 const initialState = {
     err: null,
@@ -21,20 +20,9 @@ export default(state = initialState, action) => {
         case `${FETCH_FORECAST}_PENDING`:
             return {};
         case `${FETCH_FORECAST}_FULFILLED`:
-            const convertedData = data.list.slice(0,5).map(item => {
-              let code = item.weather[0].id;
-              let icon = 'wi wi-owm-' + code;
-          return({
-            icon,
-            time: unitConverter.toGMT(item.dt),
-            temp: unitConverter.toFarenheit(item.main.temp),
-            winddir: unitConverter.toCardinal(item.wind.deg),
-            windspd: unitConverter.toMPH(item.wind.speed)
-          });
-        });
             return {
                 ...state,
-                hourlyforecast: convertedData,
+                hourlyforecast: data,
                 isFetched: true
             };
         case `${FETCH_FORECAST}_REJECTED`:

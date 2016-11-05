@@ -1,6 +1,4 @@
-import { FETCH_BACKGROUND } from '../actions/actions';
-import { changeAppBackground } from '../local_modules/background';
-import { weatherConditionCheck } from '../local_modules/conditions';
+import { FETCH_BACKGROUND } from '../actions/ActionTypes';
 
 const initialState = {
     img: null,
@@ -24,18 +22,9 @@ export default(state = initialState, action) => {
         case `${FETCH_BACKGROUND}_PENDING`:
             return {};
         case `${FETCH_BACKGROUND}_FULFILLED`:
-            const sunrise = data.sys.sunrise;
-            const sunset = data.sys.sunset;
-            const code = data.weather[0].id;
-            const condition = weatherConditionCheck.codeToIdentifier(code);
-            const time = changeAppBackground.getTime();
-            const sunup = changeAppBackground.convertSunrise(sunrise);
-            const sundown = changeAppBackground.convertSunset(sunset);
-            const id = changeAppBackground.getIdentifier(time, sunup, sundown);
-            const image = changeAppBackground.setBackground(id, condition);
             return {
                 ...state,
-                image,
+                img: data,
                 isFetched: true
             };
         case `${FETCH_BACKGROUND}_REJECTED`:
