@@ -1,28 +1,26 @@
 import React, { propTypes } from 'react';
 
+import {Load} from './MyComponents';
+
 const Forecast = ({ forecast, isFetched }) => {
   if (!isFetched) {
-    return (
-      <h1>Loading...</h1>
-    );
+      return (<Load/>);
   }
   const forecastData = forecast.map(data => {
     return(
       <tr key={data.time}>
         <td>{data.time}</td>
-        <td><i className={data.icon}></i></td>
-        <td>{data.temp} F</td>
+        <td><i className={data.icon}></i>{data.temp} F</td>
         <td>{data.windspd} MPH {data.winddir}</td>
       </tr>
     );
   })
 
   return (
-    <table className="table table-hover forecast">
+    <table className="table table-hover forecast-table">
       <thead>
         <tr>
           <td>Time</td>
-          <td></td>
           <td>Temp</td>
           <td>Wind</td>
         </tr>

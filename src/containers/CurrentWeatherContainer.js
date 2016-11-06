@@ -7,7 +7,9 @@ class CurrentWeatherContainer extends Component {
   render() {
     const { isFetched, weatherData } = this.props.current;
     return (
-      <CurrentWeather weather={ weatherData } isFetched={ isFetched }/>
+      <div className="weather">
+        <CurrentWeather weather={ weatherData } isFetched={ isFetched }/>
+      </div>
     );
   }
 }

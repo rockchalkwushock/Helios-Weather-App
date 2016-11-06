@@ -7,7 +7,9 @@ class ForecastContainer extends Component {
   render() {
     const { hourlyforecast, isFetched } = this.props.forecast;
     return (
-      <Forecast forecast={ hourlyforecast } isFetched={ isFetched }/>
+      <div className="forecast">
+        <Forecast forecast={ hourlyforecast } isFetched={ isFetched }/>
+      </div>
     );
   }
 }

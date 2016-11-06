@@ -1,31 +1,21 @@
-@a-clear: url('https://rborg42.files.wordpress.com/2013/09/september14thskyshot1.jpg');
-@a-cloudy: url('http://cdn.rosannadavisonnutrition.com/wp-content/uploads/2015/12/apples.jpeg');
-@a-rain: url('http://blog.sevenponds.com/wp-content/uploads/2011/11/rain.jpg');
-@a-snow: url('http://quillcards.com/blog/wp-content/uploads/2009/12/late-afternoon-winter-snow.jpg');
-@e-clear: url('http://img12.deviantart.net/7d2c/i/2015/187/4/e/clear_evening_sky_by_sentrathedragon-d906th8.jpg');
-@e-cloudy: url('https://halflightpraxis.files.wordpress.com/2012/04/dsc_0774.jpg');
-@e-rain: url('https://c1.staticflickr.com/5/4108/5196375282_9080efe45f_b.jpg');
-@e-snow: url('https://wallpaperscraft.com/image/sun_decline_evening_snow_trees_fir-trees_shade_14758_1366x768.jpg');
-@m-clear: url('http://coresites-cdn.factorymedia.com/rcuk/wp-content/uploads/2012/11/blue-skywinter-morning.jpg');
-@m-cloudy: url('http://4.bp.blogspot.com/-FJKGF7UEmPQ/TyqT2CIKhsI/AAAAAAAAIyo/yvPIuKlUWWw/s1600/cloudy.JPG');
-@m-rain: url('https://othersurroundingareas.files.wordpress.com/2012/07/img_4289.jpg');
-@m-snow: url('https://wallpaperscraft.com/image/sun_morning_wood_trees_shades_snow_winter_4812_1024x768.jpg');
-@n-clear: url('https://upload.wikimedia.org/wikipedia/commons/2/2e/Full_moon_on_clear_night.JPG');
-@n-cloudy: url('http://media.gettyimages.com/videos/dark-and-cloudy-moonlight-night-sky-background-video-id503179318?s=640x640');
-@n-rain: url('https://w-dog.net/wallpapers/15/0/515302112143455/night-rain-embankment-lights-man-loneliness.jpg');
-@n-snow: url('https://edshunnybunny.files.wordpress.com/2010/02/snow-pics-015.jpg');
-@stock: url('https://s-media-cache-ak0.pinimg.com/236x/83/d7/5b/83d75b2888e03b11779ad319e3c62915.jpg');
+@import 'background.less';
+
+@100: 100%;
+@base: 0;
+@auto: auto;
+@y: yellow;
+@b: black;
 
 * {
   box-sizing: border-box;
 }
 
 html, body, #app, .layout {
-  margin: 0, auto;
-  padding: 0;
+  margin: @base, @auto;
+  padding: @base;
   overflow: hidden;
-  background-color: black;
-  height: 100%;
+  background-color: @b;
+  height: @100;
 }
 
 .layout {
@@ -34,94 +24,93 @@ html, body, #app, .layout {
 
 .footer {
   position:absolute;
-  bottom:0;
-  width:100%;
-  color: yellow;
+  bottom:@base;
+  width:@100;
+  height: 15%;
+  color: @y;
 }
 
 .loader {
   div {
     width: 8em;
     height: 64px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: @auto;
+    margin-right: @auto;
   }
 }
 
 nav {
   height: 10%;
-  background-color: black;
+  background-color: @b;
 }
 
 .searchbar {
   height: 10%;
   padding: .25em 0em .25em 0em;
   input  {
-    height: 100%;
+    height: @100;
     vertical-align: middle;
-    border-color: yellow;
-    background: black;
+    border-color: @y;
+    background: @b;
   }
   input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: yellow;
+    color: @y;
   }
   input::-moz-placeholder { /* Firefox 19+ */
-    color: yellow;
+    color: @y;
   }
   input:-ms-input-placeholder { /* IE 10+ */
-    color: yellow;
+    color: @y;
   }
   input:-moz-placeholder { /* Firefox 18- */
-    color: yellow;
+    color: @y;
   }
   input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: black;
+    color: @b;
   }
   input:focus::-moz-placeholder { /* Firefox 19+ */
-    color: black;
+    color: @b;
   }
   input:focus:-ms-input-placeholder { /* IE 10+ */
-    color: black;
+    color: @b;
   }
   input:focus:-moz-placeholder { /* Firefox 18- */
-    color: black;
+    color: @b;
   }
   .form-control {
-    color: yellow;
-    background-color: black;
+    color: @y;
+    background-color: @b;
     &:focus {
-      border-color: yellow;
+      border-color: @y;
     }
   }
   span {
-    height: 100%;
+    height: @100;
     vertical-align: top;
     button {
-      height: 100%;
+      height: @100;
       vertical-align: top;
-      color: yellow;
-      background-color: black;
-      border-color: yellow;
+      color: @y;
+      background-color: @b;
+      border-color: @y;
       &:hover {
-        color: black;
-        background-color: yellow;
-        border-color: black;
+        color: @b;
+        background-color: @y;
+        border-color: @b;
       }
       &:focus:active {
-        color: yellow;
-        background-color: black;
-        border-color: yellow;
+        color: @y;
+        background-color: @b;
+        border-color: @y;
       }
     }
   }
 }
 
-
-
 .header {
-  background-color: black;
+  background-color: @b;
   padding-left: 0.5em;
-  color: yellow;
+  color: @y;
   text-align: center;
   h1 {
     margin-top: 0.5rem;
@@ -131,151 +120,102 @@ nav {
 .weather-link {
   text-align: center;
   .button-link {
-    background-color: black;
-    border-color: yellow;
+    background-color: @b;
+    border-color: @y;
     h1 {
-      color: yellow;
+      color: @y;
       margin-top: 0.5rem;
       i {
-        color: yellow;
+        color: @y;
       }
     }
     &:hover {
-      background-color: yellow;
-      border-color: black;
+      background-color: @y;
+      border-color: @b;
       h1 {
-        color: black;
+        color: @b;
         margin-top: 0.5rem;
         i {
-          color: black;
+          color: @b;
         }
       }
     }
     &:focus:active:visited {
-      background-color: black;
-      border-color: yellow;
+      background-color: @b;
+      border-color: @y;
       h1 {
-        color: yellow;
+        color: @y;
         margin-top: 0.5rem;
         i {
-          color: yellow;
+          color: @y;
         }
       }
     }
   }
 }
 
-
+.current-button {
+  background-color: @y;
+  border-color: @b;
+  h1, h2 {
+    color: @b;
+  }
+  i {
+    color: @b;
+  }
+  &:hover {
+    background-color: @y;
+    border-color: @b;
+    h1, h2 {
+      color: @b;
+    }
+    i {
+      color: @b;
+    }
+  }
+  &:focus:active:visited {
+    background-color: @y;
+    border-color: @b;
+    h1, h2 {
+      color: @b;
+    }
+    i {
+      color: @b;
+    }
+  }
+}
 
 .navbar-brand {
-    color: yellow;
+    color: @y;
     &:hover {
-      color: yellow;
+      color: @y;
       font-size: 1.5rem;
     }
     &:visited {
-      color: yellow;
+      color: @y;
     }
 }
-
 
 i {
   height: 50px;
   width: 50px;
 }
 
-#BackgroundContainer {
-
-}
-
 // div that contains current weather & forecast
 
-.weather {
-
+.weather, .forecast {
+  text-align: center;
 }
 
 .forecast {
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-table {
-  background-color: white;
-	opacity: .75;
-	border-radius: 2em;
-}
-
-
-
-.background {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-
-  &.afternoon-clear {
-    background-image: @a-clear;
-
-  }
-  &.afternoon-cloudy {
-    background-image: @a-cloudy;
-  }
-  &.afternoon-rain {
-    background-image: @a-rain;
-  }
-  &.afternoon-snow {
-    background-image: @a-snow;
-  }
-  &.evening-clear {
-    background-image: @e-clear;
-  }
-  &.evening-cloudy {
-    background-image: @e-cloudy;
-  }
-  &.evening-rain {
-    background-image: @e-rain;
-  }
-  &.evening-snow {
-    background-image: @e-snow;
-  }
-  &.morning-clear {
-    background-image: @m-clear;
-  }
-  &.morning-cloudy {
-    background-image: @m-cloudy;
-  }
-  &.morning-rain {
-    background-image: @m-rain;
-  }
-  &.morning-snow {
-    background-image: @m-snow;
-  }
-  &.night-clear {
-    background-image: @n-clear;
-  }
-  &.night-cloudy {
-    background-image: @n-cloudy;
-  }
-  &.night-rain {
-    background-image: @n-rain;
-  }
-  &.night-snow {
-    background-image: @n-snow;
-  }
-  &.stock {
-    background-image: @stock;
+  padding: 0 1em 0 1em;
+  table {
+    background-color: @y;
+    border: 1px solid @b;
+    color: @b;
+  	border-radius: 2em;
+    td {
+      border: 1px solid @b;
+    }
   }
 }
