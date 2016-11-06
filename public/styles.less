@@ -20,21 +20,23 @@
   box-sizing: border-box;
 }
 
-html, body, #app, .test {
+html, body, #app, .layout {
   margin: 0, auto;
   padding: 0;
   overflow: hidden;
   background-color: black;
-  max-height: 100%;
   height: 100%;
 }
 
-#app {
-
+.layout {
+  position: relative;
 }
 
-.test {
-
+.footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  color: yellow;
 }
 
 .loader {

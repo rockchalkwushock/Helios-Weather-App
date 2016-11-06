@@ -7,7 +7,7 @@
     "babel-node": "babel-node",
     "local": "nodemon --exec babel-node src/client.js",
     "test": "mocha --compilers js:babel-register test/**/*.js*",
-    "dev": "webpack-dev-server --content-base build --inline --hot",
+    "dev": "webpack-dev-server --inline --hot --content-base build --history-api-fallback",
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js",
     "watch": "npm run watch:html & npm run watch:css npm run watch:js",
