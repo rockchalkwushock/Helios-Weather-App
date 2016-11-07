@@ -4,6 +4,7 @@
   "description": "Thinkful Capstone #3: Weather App using OpenWeatherMap API &amp; React Framework",
   "main": "src/client.js",
   "scripts": {
+    "start": "npm run build && npm run dev",
     "babel-node": "babel-node",
     "local": "nodemon --exec babel-node src/client.js",
     "test": "mocha --compilers js:babel-register test/**/*.js*",

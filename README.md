@@ -47,3 +47,15 @@ The purpose of this app is to give the user access to the current & hourly weath
 
 
 ## Visual flow of App for user (V:1.0.0)
+
+## Directions for Usage:
+
+`$ git clone https://github.com/rockchalkwushock/Helios-Weather-App.git`
+
+`$ cd Helios-Weather-App`
+
+`npm install`
+
+`npm start`
+
+Open your bowser to http://localhost:8080.
