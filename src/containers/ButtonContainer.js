@@ -9,7 +9,7 @@ class ButtonContainer extends Component {
         const { weatherData , isFetched } = this.props.current;
         return (
           <div className='row weather-link'>
-              <CW_Button weather={ weatherData } isFetched={ isFetched }/>
+              <CW_Button weather={ weatherData } isFetched={ isFetched } />
           </div>
         );
     }

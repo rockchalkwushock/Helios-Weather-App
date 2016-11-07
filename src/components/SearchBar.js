@@ -3,7 +3,7 @@ import React, { propTypes } from 'react';
 const SearchBar = ({ fetchWeather }) => {
   let textInput = null;
   return(
-    <form className='input-group searchbar' onSubmit={event => fetchWeather(textInput)}>
+    <form className='input-group searchbar' onSubmit={event => {event.preventDefault(); fetchWeather(textInput)}}>
       <input
       ref={(input) => textInput = input}
       className='form-control'

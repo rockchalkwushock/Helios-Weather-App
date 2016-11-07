@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { CurrentWeather } from '../components/MyComponents';
+import { CurrentWeather, DashButton, ForecastButton } from '../components/MyComponents';
 
 class CurrentWeatherContainer extends Component {
   render() {
@@ -9,6 +9,8 @@ class CurrentWeatherContainer extends Component {
     return (
       <div className="weather">
         <CurrentWeather weather={ weatherData } isFetched={ isFetched }/>
+        <DashButton />
+        <ForecastButton />
       </div>
     );
   }
