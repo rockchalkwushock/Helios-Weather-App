@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const BackToDashButton = () => {
     return (
-      <Link to='/forecast' className='btn btn-primary button-link'>
+      <Link to='/forecast' className='btn btn-primary forecast-button'>
         <h1>3-Hourly Forecast</h1>
       </Link>
     );
