@@ -12,14 +12,14 @@ The purpose of this app is to give the user access to the current & hourly weath
 
 
 ### Libraries:
-  - Chai (assertion library)
+  - Chai
   - Lodash
   - React.js
 
 
 ### Frameworks:
   - Bootstrap
-  - Mocha (testing)
+  - Mocha
   - Redux.js
 
 
@@ -28,15 +28,14 @@ The purpose of this app is to give the user access to the current & hourly weath
 
 
 ### Tools
-  - AJAX
-  - Axios (promise-based HTTP Client)
-  - Enzyme (React Testing Tool)
+  - Axios
+  - Enzyme
   - Webpack
   - Travis CI
 
 #### Personally Created Modules
-  - background.js
-  - conditions.js
+  - background.js (not currently in use)
+  - conditions.js (not currently in use)
   - conversions.js
 
 
@@ -45,8 +44,17 @@ The purpose of this app is to give the user access to the current & hourly weath
 
 ## Flow of App for user (V:1.0.0)
 
+1. User will come to the landing page and be able to search any US City.
+2. Upon submission the user will be shown the current temperature of that city.
+3. The user can click the current temperature to view more data on the current weather of the searched city.
+4. The user can choose to return to the dashboard or view the next 12 hours of forecast.
+5. If choosing to view the forecast the user still has the option to return to the dashboard.
+6. The user is able to search a new city at any point.
 
 ## Visual flow of App for user (V:1.0.0)
+
+![sprite](https://github.com/rockchalkwushock/Helios-Weather-App/blob/master/img/sprites.png "Visual App Flow")
+
 
 ## Directions for Usage:
 

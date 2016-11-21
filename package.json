@@ -34,6 +34,7 @@
     "url": "git+https://github.com/rockchalkwushock/Helios-Weather-App.git"
   },
   "keywords": [
+    "OpenWeatherMap",
     "react",
     "react-router",
     "redux",
