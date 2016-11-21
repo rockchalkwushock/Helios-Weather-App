@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const BackToDashButton = () => {
     return (
       <Link to='/forecast' className='btn btn-primary forecast-button'>
-        <h1>3-Hourly Forecast</h1>
+        <h1>Hourly Forecast</h1>
       </Link>
     );
 };

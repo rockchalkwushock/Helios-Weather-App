@@ -7,7 +7,7 @@ const CurrentWeather = ({isFetched, weather}) => {
         return (<Load/>);
     }
     return (
-        <div className='current btn btn-primary current-button'>
+        <div className='current container-fluid'>
             <h1>
                 <i className={weather.icon}></i>
                 {weather.temp}

@@ -1,4 +1,5 @@
-@import 'background.less';
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@indieFlower: 'Indie Flower', cursive;
 
 @100: 100%;
 @base: 0;
@@ -12,7 +13,7 @@
 
 html, body, #app, .layout {
   margin: @base, @auto;
-  padding: @base;
+  padding: .25em;
   overflow: hidden;
   background-color: @b;
   height: @100;
@@ -39,9 +40,24 @@ html, body, #app, .layout {
   }
 }
 
-nav {
-  height: 10%;
+.navbar {
+  height: 8%;
+  padding: 0;
   background-color: @b;
+  .nAv {
+    padding-left: 0;
+  }
+  .navbar-brand {
+      color: @y;
+      font-family: @indieFlower;
+      font-size: 1.5rem;
+      &:hover {
+        color: @y;
+      }
+      &:visited {
+        color: @y;
+      }
+  }
 }
 
 .searchbar {
@@ -113,6 +129,7 @@ nav {
   color: @y;
   text-align: center;
   h1 {
+    font-family: @indieFlower;
     margin-top: 0.5rem;
   }
 }
@@ -123,6 +140,7 @@ nav {
     background-color: @b;
     border-color: @y;
     h1 {
+      font-family: @indieFlower;
       color: @y;
       margin-top: 0.5rem;
       i {
@@ -154,54 +172,23 @@ nav {
   }
 }
 
-.current-button {
+.current {
   background-color: @y;
   border-color: @b;
+  margin-bottom: .5em;
+  width: 90%;
   h1, h2 {
     color: @b;
   }
   i {
     color: @b;
   }
-  &:hover {
-    background-color: @y;
-    border-color: @b;
-    h1, h2 {
-      color: @b;
-    }
-    i {
-      color: @b;
-    }
-  }
-  &:focus:active:visited {
-    background-color: @y;
-    border-color: @b;
-    h1, h2 {
-      color: @b;
-    }
-    i {
-      color: @b;
-    }
-  }
-}
-
-.navbar-brand {
-    color: @y;
-    &:hover {
-      color: @y;
-      font-size: 1.5rem;
-    }
-    &:visited {
-      color: @y;
-    }
 }
 
 i {
   height: 50px;
   width: 50px;
 }
-
-// div that contains current weather & forecast
 
 .weather, .forecast {
   text-align: center;
@@ -211,7 +198,10 @@ i {
   .dash-button {
     background-color: @b;
     border-color: @y;
+    margin-bottom: .5em;
+    width: 90%;
     h1 {
+      font-family: @indieFlower;
       color: @y;
       margin-top: 0.5rem;
     }
@@ -235,7 +225,9 @@ i {
   .forecast-button {
     background-color: @b;
     border-color: @y;
+    width: 90%;
     h1 {
+      font-family: @indieFlower;
       color: @y;
       margin-top: 0.5rem;
     }
@@ -257,6 +249,7 @@ i {
     }
   }
 }
+
 .forecast {
   padding: 0 1em 0 1em;
   table {
@@ -264,6 +257,7 @@ i {
     border: 1px solid @b;
     color: @b;
   	border-radius: 2em;
+    font-size: .75rem;
     td {
       border: 1px solid @b;
     }
@@ -272,6 +266,7 @@ i {
     background-color: @b;
     border-color: @y;
     h1 {
+      font-family: @indieFlower;
       color: @y;
       margin-top: 0.5rem;
     }
