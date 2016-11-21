@@ -8,6 +8,8 @@ The purpose of this app is to give the user access to the current & hourly weath
 I have built a module for changing the background image based on the current time of day & weather condition.
 Working on implementing this into the application. Will require restyling of applicaiton.
 
+It is also my hope to build a backend component for this app using either Express.js or Meteor.js for the initial rendering of the application. I will then host the application on Heroku.
+
 ## Technologies:
 
 
