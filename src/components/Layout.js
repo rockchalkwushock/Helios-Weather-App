@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Footer, Navbar } from './MyComponents';
+import { Navbar } from './MyComponents';
 import { SearchBarContainer } from '../containers/MyContainers';
 
 export default class Layout extends Component {
@@ -10,7 +10,6 @@ export default class Layout extends Component {
         <Navbar />
         <SearchBarContainer />
         {this.props.children}
-        <Footer />
       </div>
     );
   }
