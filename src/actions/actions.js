@@ -46,7 +46,7 @@ export const fetchForecast = (city) => {
     axios.get(url)
          .then(res => {
            const data = res.data;
-           const convertedData = data.list.slice(0,5).map(item => {
+           const convertedData = data.list.slice(0,4).map(item => {
              let code = item.weather[0].id;
              let icon = 'wi wi-owm-' + code;
              return({
