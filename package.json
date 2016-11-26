@@ -5,7 +5,7 @@
   "main": "src/client.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
-    "start-prod": "npm run build && npm run server",
+    "start": "npm run build && npm run server",
     "start-dev": "npm run build && npm run dev",
     "babel-node": "babel-node",
     "server": "babel-node src/server.js",
