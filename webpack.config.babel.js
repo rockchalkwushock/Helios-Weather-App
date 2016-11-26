@@ -2,14 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import packageData from './package.json';
 
-let minify = process.argv.indexOf('--minify') != -1;
 let filename = [packageData.name, packageData.version, 'js'];
-let plugins = [];
-
-if (minify) {
-    filename.splice(filename.length - 1, 0, 'min');
-    plugins.push(new webpack.optimize.UglifyJsPlugin());
-}
 
 export default {
     entry: path.resolve(__dirname, packageData.main),
@@ -30,7 +23,6 @@ export default {
             }
         ]
     },
-    plugins: plugins,
     resolve: {
     extensions: ['', '.js', '.jsx']
     },
