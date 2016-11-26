@@ -4,10 +4,12 @@
   "description": "Thinkful Capstone #3: Weather App using OpenWeatherMap API &amp; React Framework",
   "main": "src/client.js",
   "scripts": {
-    "start": "npm run build && npm run dev",
-    "babel-node": "babel-node",
-    "local": "nodemon --exec babel-node src/client.js",
     "test": "mocha --compilers js:babel-register test/**/*.js*",
+    "start-prod": "npm run build && npm run server",
+    "start-dev": "npm run build && npm run dev",
+    "babel-node": "babel-node",
+    "server": "babel-node src/server.js",
+    "local": "nodemon --exec babel-node src/server.js",
     "dev": "webpack-dev-server --inline --hot --content-base build --history-api-fallback",
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js",
@@ -34,6 +36,7 @@
     "url": "git+https://github.com/rockchalkwushock/Helios-Weather-App.git"
   },
   "keywords": [
+    "express",
     "OpenWeatherMap",
     "react",
     "react-router",
@@ -49,6 +52,7 @@
   "homepage": "https://github.com/rockchalkwushock/Helios-Weather-App#readme",
   "dependencies": {
     "axios": "^0.15.2",
+    "express": "^4.14.0",
     "lodash": "^4.16.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
