@@ -1,2 +1,8 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key: 7fb22f02-1df0-4541-a04e-8695dc3ec7c6
+  app: heliosweather
+  on:
+    repo: rockchalkwushock/Helios-Weather-App
