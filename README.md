@@ -1,14 +1,31 @@
 # Helios-Weather-App
+[![Build Status](https://travis-ci.org/rockchalkwushock/Helios-Weather-App.svg?branch=master)](https://travis-ci.org/rockchalkwushock/Helios-Weather-App)
+[![Dependencies Status](https://david-dm.org/rockchalkwushock/Helios-Weather-App.svg?branch=master)](https://david-dm.org/rockchalkwushock/Helios-Weather-App.svg)
+
 Thinkful Capstone #3: Weather App using OpenWeatherMap API &amp; React Framework
 
 ## Purpose:
 The purpose of this app is to give the user access to the current & hourly weather data of US Cities.
 
-## Future Features:
-I have built a module for changing the background image based on the current time of day & weather condition.
-Working on implementing this into the application. Will require restyling of applicaiton.
+## Directions for Usage:
 
-It is also my hope to build a backend component for this app using either Express.js or Meteor.js for the initial rendering of the application. I will then host the application on Heroku.
+`$ git clone https://github.com/rockchalkwushock/Helios-Weather-App.git`
+
+`$ cd Helios-Weather-App`
+
+`npm install`
+
+`npm start`
+
+Open your bowser to http://localhost:8080.
+
+## Future Features:
+  - Integrate background changing module.
+    * based on current time of day.
+    * current weather condition.
+  - Integrate a backend for server-side rendering (SSR).
+    * Express.js or Meteor.js
+
 
 ## Technologies:
 
@@ -37,7 +54,6 @@ It is also my hope to build a backend component for this app using either Expres
   - Axios
   - Enzyme
   - Webpack
-  - Travis CI
 
 #### Personally Created Modules
   - background.js (not currently in use)
@@ -60,16 +76,3 @@ It is also my hope to build a backend component for this app using either Expres
 ## Visual flow of App for user (V:1.0.0)
 
 ![sprite](https://github.com/rockchalkwushock/Helios-Weather-App/blob/master/img/sprites.png "Visual App Flow")
-
-
-## Directions for Usage:
-
-`$ git clone https://github.com/rockchalkwushock/Helios-Weather-App.git`
-
-`$ cd Helios-Weather-App`
-
-`npm install`
-
-`npm start`
-
-Open your bowser to http://localhost:8080.
