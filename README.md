@@ -17,7 +17,7 @@ The purpose of this app is to give the user access to the current & hourly weath
 
 `npm start`
 
-Open your bowser to (http://localhost:8080).
+Open your browser to: [http://localhost:8080](http://localhost:8080).
 
 ## Future Features:
   - Integrate background changing module.
