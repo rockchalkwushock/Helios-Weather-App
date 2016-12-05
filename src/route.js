@@ -10,6 +10,6 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 export default (
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
+    <Router history={history} routes={routes} />
   </Provider>
 );

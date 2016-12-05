@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { CW_Button } from '../components/MyComponents';
+import { CWButton } from '../components/index';
 
 class ButtonContainer extends Component {
 
     render() {
-        const { weatherData , isFetched } = this.props.current;
+        const { weatherData, isFetched } = this.props.current;
         return (
           <div className='row weather-link'>
-              <CW_Button weather={ weatherData } isFetched={ isFetched } />
+              <CWButton weather={weatherData} isFetched={isFetched} />
           </div>
         );
     }
 }
 
-const mapStateToProps = ({ current }) => {
-    return { current };
-};
+const mapStateToProps = ({ current }) => ({ current });
 
 export default connect(mapStateToProps)(ButtonContainer);

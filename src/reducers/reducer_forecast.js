@@ -1,4 +1,4 @@
-import { FETCH_FORECAST } from '../actions/ActionTypes';
+import { FETCH_FORECAST } from '../actions/types';
 
 const initialState = {
     err: null,

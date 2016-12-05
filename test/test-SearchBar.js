@@ -3,7 +3,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import SearchBar from '../src/components/SearchBar';
+import { SearchBar } from '../src/components/index';
 
 describe('<SearchBar />', () => {
   it('should have the name: SearchBar', () => {

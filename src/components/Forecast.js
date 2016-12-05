@@ -1,20 +1,18 @@
-import React, { propTypes } from 'react';
+import React, { propTypes } from 'react'; // eslint-disable-line
 
-import {Load} from './MyComponents';
+import { Load } from './index';
 
 const Forecast = ({ forecast, isFetched }) => {
   if (!isFetched) {
-      return (<Load/>);
+      return (<Load />);
   }
-  const forecastData = forecast.map(data => {
-    return(
+  const forecastData = forecast.map(data => (
       <tr key={data.time}>
         <td>{data.time}</td>
-        <td><i className={data.icon}></i>{data.temp} F</td>
+        <td><i className={data.icon} />{data.temp} F</td>
         <td>{data.windspd} MPH {data.winddir}</td>
       </tr>
-    );
-  })
+    ));
 
   return (
     <table className="table table-hover forecast-table">
@@ -33,14 +31,13 @@ const Forecast = ({ forecast, isFetched }) => {
 };
 
 Forecast.propTypes = {
-  forecast: React.PropTypes.arrayOf(React.PropTypes.object),
+  isFetched: React.PropTypes.bool,
   forecast: React.PropTypes.arrayOf(React.PropTypes.shape({
     temp: React.PropTypes.number,
     time: React.PropTypes.string,
     winddir: React.PropTypes.string,
     windspd: React.PropTypes.number,
-  })),
-  isFetched: React.PropTypes.bool
-}
+  }))
+};
 
 export default Forecast;

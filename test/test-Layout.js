@@ -3,7 +3,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import Layout from '../src/components/Layout';
+import { Layout } from '../src/components/index';
 
 describe('<Layout />', () => {
   it('should have the name: Layout', () => {

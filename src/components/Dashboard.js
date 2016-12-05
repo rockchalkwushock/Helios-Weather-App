@@ -1,14 +1,12 @@
 import React from 'react';
 
-import { ButtonContainer, HeaderContainer } from '../containers/MyContainers';
+import { ButtonContainer, HeaderContainer } from '../containers/index';
 
-const Dashboard = () => {
-  return (
+const Dashboard = () => (
     <div>
     <HeaderContainer />
     <ButtonContainer />
     </div>
   );
-};
 
 export default Dashboard;

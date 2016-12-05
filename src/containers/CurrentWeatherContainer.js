@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { CurrentWeather, DashButton, ForecastButton } from '../components/MyComponents';
+import { CurrentWeather, DashButton, ForecastButton } from '../components/index';
 
 class CurrentWeatherContainer extends Component {
   render() {
     const { isFetched, weatherData } = this.props.current;
     return (
       <div className="weather">
-        <CurrentWeather weather={ weatherData } isFetched={ isFetched }/>
+        <CurrentWeather weather={weatherData} isFetched={isFetched} />
         <DashButton />
         <ForecastButton />
       </div>
@@ -16,6 +16,6 @@ class CurrentWeatherContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ current }) => {return { current };};
+const mapStateToProps = ({ current }) => ({ current });
 
 export default connect(mapStateToProps)(CurrentWeatherContainer);

@@ -1,8 +1,8 @@
 import path from 'path';
-import webpack from 'webpack';
+import webpack from 'webpack'; // eslint-disable-line
 import packageData from './package.json';
 
-let filename = [packageData.name, packageData.version, 'js'];
+let filename = [packageData.name, packageData.version, 'js']; // eslint-disable-line
 
 export default {
     entry: path.resolve(__dirname, packageData.main),
@@ -13,6 +13,14 @@ export default {
     devtool: 'source-map',
     module: {
         loaders: [
+            {
+                test: /\.jsx$/,
+                exclude: /(node_modules)/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015', 'react', 'stage-0']
+                }
+            },
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,

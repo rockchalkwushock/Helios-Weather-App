@@ -3,7 +3,7 @@ import promise from 'redux-promise';
 import reduxPromiseMiddleware from 'redux-promise-middleware';
 import logger from 'redux-logger';
 
-import reducers from './reducers/reducer_index';
+import reducers from './reducers/index';
 
 const middleware = [
 	reduxPromiseMiddleware(),

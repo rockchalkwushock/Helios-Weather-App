@@ -1,4 +1,3 @@
-export BackgroundContainer from './BackgroundContainer';
 export ButtonContainer from './ButtonContainer';
 export CurrentWeatherContainer from './CurrentWeatherContainer';
 export ForecastContainer from './ForecastContainer';

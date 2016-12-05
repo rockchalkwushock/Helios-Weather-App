@@ -1,5 +1,5 @@
 export CurrentWeather from './CurrentWeather';
-export CW_Button from './CW_Button';
+export CWButton from './CWButton';
 export Dashboard from './Dashboard';
 export DashButton from './DashButton';
 export Forecast from './Forecast';

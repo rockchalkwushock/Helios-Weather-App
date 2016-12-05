@@ -3,7 +3,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import Header from '../src/components/Header';
+import { Header } from '../src/components/index';
 
 describe('<Header />', () => {
   it('should have the name: Header', () => {

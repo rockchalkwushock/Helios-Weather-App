@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { Navbar } from './MyComponents';
-import { SearchBarContainer } from '../containers/MyContainers';
+import { Navbar } from './index';
+import { SearchBarContainer } from '../containers/index';
 
 export default class Layout extends Component {
   render() {

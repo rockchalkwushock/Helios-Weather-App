@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Navbar = () => {
-  return (
+const Navbar = () => (
     <nav className="navbar">
         <div className="nAv container-fluid">
             <div className="navbar-header heading">
@@ -10,6 +9,5 @@ const Navbar = () => {
         </div>
    </nav>
   );
-};
 
 export default Navbar;

@@ -1,6 +1,6 @@
-import React, { propTypes } from 'react';
+import React, { propTypes } from 'react'; // eslint-disable-line
 
-import { Load } from './MyComponents';
+import { Load } from './index';
 
 const Header = ({ isFetched, weather }) => {
   if (!isFetched) {
@@ -8,22 +8,24 @@ const Header = ({ isFetched, weather }) => {
       <Load />
     );
   }
-  return(
+  return (
     <div className='row header'>
       <h1>{weather.name}</h1>
-      <span><i className='wi wi-sunrise'></i> {weather.sunrise} <i className='wi wi-sunset'></i> {weather.sunset}</span>
+      <span>
+        <i className='wi wi-sunrise' /> {weather.sunrise}
+        <i className='wi wi-sunset' /> {weather.sunset}
+      </span>
     </div>
   );
-}
+};
 
 Header.propTypes = {
   isFetched: React.PropTypes.bool,
-  weather: React.PropTypes.object,
   weather: React.PropTypes.shape({
     name: React.PropTypes.string,
     sunrise: React.PropTypes.string,
     sunset: React.PropTypes.string,
   })
-}
+};
 
 export default Header;

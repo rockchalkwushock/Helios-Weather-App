@@ -1,4 +1,4 @@
-import { FETCH_CURRENT_WEATHER } from '../actions/ActionTypes';
+import { FETCH_CURRENT_WEATHER } from '../actions/types';
 
 const initialState = {
     code: null,
