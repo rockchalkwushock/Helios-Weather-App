@@ -52,14 +52,18 @@
   "homepage": "https://github.com/rockchalkwushock/Helios-Weather-App#readme",
   "dependencies": {
     "axios": "^0.15.2",
+    "chai": "^3.5.0",
+    "enzyme": "^2.6.0",
     "express": "^4.14.0",
     "lodash": "^4.16.4",
-    "react": "^15.3.2",
+    "react": "^15.4.1",
     "react-dom": "^15.3.2",
     "react-loading": "0.0.9",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
     "redux-promise": "^0.5.3",
     "redux-promise-middleware": "^4.1.0"
   },
@@ -78,9 +82,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.16.3",
-    "chai": "^3.5.0",
     "chokidar-cli": "^1.2.0",
-    "enzyme": "^2.5.1",
     "eslint": "^3.11.1",
     "eslint-config-rallycoding": "^3.1.0",
     "less": "^2.7.1",
@@ -88,8 +90,6 @@
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.3.2",
-    "react-router-redux": "^4.0.7",
-    "redux-logger": "^2.7.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   }

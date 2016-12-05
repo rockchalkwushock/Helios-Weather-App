@@ -1,6 +1,7 @@
+/* eslint-env mocha */
 import React from 'react';
 import { expect } from 'chai';
-import { mount, shallow, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import CurrentWeather from '../src/components/CurrentWeather';
 
@@ -11,7 +12,7 @@ describe('<CurrentWeather />', () => {
     expect(wrapper.name()).to.equal('CurrentWeather');
   });
   it('should be a table', () => {
-    const wrapper = shallow(<table/>);
+    const wrapper = shallow(<table />);
     expect(wrapper.name()).to.equal('table');
   });
   // it('should have className: table', () => {

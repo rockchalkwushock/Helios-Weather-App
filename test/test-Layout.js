@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
@@ -11,7 +12,7 @@ describe('<Layout />', () => {
     expect(wrapper.name()).to.equal('Layout');
   });
   it('should be a div', () => {
-    const wrapper = shallow(<div/>);
+    const wrapper = shallow(<div />);
     expect(wrapper.name()).to.equal('div');
   });
   it('should have className: layout', () => {

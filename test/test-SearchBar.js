@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
@@ -11,7 +12,7 @@ describe('<SearchBar />', () => {
     expect(wrapper.name()).to.equal('SearchBar');
   });
   it('should be a form', () => {
-    const wrapper = shallow(<form/>);
+    const wrapper = shallow(<form />);
     expect(wrapper.name()).to.equal('form');
   });
 });
