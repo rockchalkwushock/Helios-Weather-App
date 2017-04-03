@@ -7,7 +7,7 @@
   "author": "Cody <rockchalkwushock@iclould.com> (https://rockchalkwushock.github.io/rcws-development/)",
   "license": "MIT",
   "scripts": {
-    "build": "yarn clean && NODE_ENV=production webpack -p --progress --profile --colors --config webpack.prod.config.js",
+    "build": "yarn run clean && NODE_ENV=production webpack -p --progress --profile --colors --config webpack.prod.config.js",
     "clean": "rimraf dist coverage",
     "commit": "git cz",
     "dev:c": "NODE_ENV=development webpack-dev-server --colors --profile --config webpack.dev.config.js",
