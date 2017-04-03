@@ -1,12 +1,40 @@
 {
-  "presets": [
-    ["env", { "modules": false }],
-    "react"
-  ],
-  "plugins": [
-    "react-hot-loader/babel",
-    "transform-decorators-legacy",
-    "transform-object-rest-spread",
-    "syntax-dynamic-import"
-  ]
+  "env": {
+    "development": {
+      "presets": [
+        ["env", { "modules": false }],
+        "react"
+      ],
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-decorators-legacy",
+        "transform-object-rest-spread",
+        "syntax-dynamic-import"
+      ]
+    },
+    "production": {
+      "presets": [
+        ["env", { "modules": false }],
+        "react"
+      ],
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-decorators-legacy",
+        "transform-object-rest-spread",
+        "syntax-dynamic-import"
+      ]
+    }
+  },
+  "test": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel",
+      "transform-decorators-legacy",
+      "transform-object-rest-spread",
+      "syntax-dynamic-import"
+    ]
+  }
 }
