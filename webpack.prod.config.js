@@ -1,17 +1,19 @@
-import autoprefixer from 'autoprefixer';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { join } from 'path';
-import OfflinePlugin from 'offline-plugin';
-import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
-import webpack from 'webpack';
+const autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { join } = require('path');
+const OfflinePlugin = require('offline-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const webpack = require('webpack');
 
 const VENDOR_LIBS = [
-  'react', 'react-dom',
+  'axios', 'react', 'react-dom', 'react-redux',
+  'react-router', 'react-router-redux', 'redux',
+  'redux-thunk',
 ];
 
-export default {
+module.exports = {
   devtool: 'source-map',
   entry: {
     bundle: [
@@ -77,7 +79,7 @@ export default {
       template: 'src/index.html',
     }),
     new CopyWebpackPlugin([
-      { from: './src/manifest.json', to: 'manifest.json' },
+      { =: './src/manifest.json', to: 'manifest.json' },
     ]),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new SWPrecacheWebpackPlugin({

@@ -1,13 +1,15 @@
-import webpack from 'webpack';
-import { join } from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+const webpack = require('webpack');
+const { join } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = [
-  'react', 'react-dom',
+  'axios', 'react', 'react-dom', 'react-redux',
+  'react-router', 'react-router-redux', 'redux',
+  'redux-thunk', 'styled-components',
 ];
 
-export default {
+module.exports = {
   devtool: 'eval',
   target: 'web',
   entry: {
