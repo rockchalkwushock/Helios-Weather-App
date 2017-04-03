@@ -79,7 +79,7 @@ module.exports = {
       template: 'src/index.html',
     }),
     new CopyWebpackPlugin([
-      { =: './src/manifest.json', to: 'manifest.json' },
+      { from: './src/manifest.json', to: 'manifest.json' },
     ]),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new SWPrecacheWebpackPlugin({
