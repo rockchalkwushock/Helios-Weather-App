@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom', 'react-redux',
-  'react-router', 'react-router-redux', 'redux',
+  'redux', 'redux-form',
   'redux-thunk', 'styled-components',
 ];
 

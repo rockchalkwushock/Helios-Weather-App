@@ -9,8 +9,8 @@ const webpack = require('webpack');
 
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom', 'react-redux',
-  'react-router', 'react-router-redux', 'redux',
-  'redux-thunk',
+  'redux', 'redux-form',
+  'redux-thunk', 'styled-components',
 ];
 
 module.exports = {

@@ -2,6 +2,7 @@ import axios from 'axios';
 import unitConverter from './unitConversion';
 
 axios.defaults.baseURL = 'http://api.openweathermap.org/data/2.5/';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 const key = process.env.API_KEY;
 
 export default class {

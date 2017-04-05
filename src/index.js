@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
-import Root from './Root';
+import App from './layout/App';
 import { store } from './redux';
 import './styles/styles.css';
 
@@ -26,12 +26,12 @@ const renderApp = Component => {
   );
 };
 
-renderApp(Root);
+renderApp(App);
 
 // Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('./Root', () => {
-    const NewApp = require('./Root').default;
+  module.hot.accept('./layout/App', () => {
+    const NewApp = require('./layout/App').default;
 
     renderApp(NewApp);
   });
