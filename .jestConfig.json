@@ -2,14 +2,17 @@
   "bail": true,
   "testEnvironment": "node",
   "collectCoverageFrom": [
-    "src/*.js"
+    "src/modules/weather/*.js"
+  ],
+  "coveragePathIgnorePatterns": [
+    "src/modules/weather/actions.js"
   ],
   "coverageThreshold": {
     "global": {
-      "branches": 100,
-      "functions": 100,
-      "lines": 100,
-      "statements": 100
+      "branches": 70,
+      "functions": 70,
+      "lines": 70,
+      "statements": 70
     }
   }
 }

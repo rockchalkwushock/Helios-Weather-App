@@ -1,6 +1,13 @@
-import { FETCH_CURRENT, FETCH_FORECAST } from './types';
+import { FETCH_CURRENT, FETCH_ERROR, FETCH_FORECAST } from './types';
 
-export default (state = {}, action) => {
+export const initialState = {
+  current: null,
+  error: false,
+  hourly: null,
+  isFetched: false,
+};
+
+export default (state = initialState, action) => {
   const { data, type } = action;
   switch (type) {
     case FETCH_CURRENT:
@@ -15,12 +22,11 @@ export default (state = {}, action) => {
         hourly: data,
         isFetched: true,
       };
-    case `${FETCH_CURRENT}_ERROR`:
-    case `${FETCH_FORECAST}_ERROR`:
+    case FETCH_ERROR:
       return {
         ...state,
-        isFetched: false,
-        err: data,
+        isFetched: true,
+        error: true,
       };
     default: return state;
   }

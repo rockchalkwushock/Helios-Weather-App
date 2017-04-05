@@ -1,49 +1,59 @@
-import { FETCH_CURRENT, FETCH_FORECAST } from './types';
+import { FETCH_CURRENT, FETCH_ERROR, FETCH_FORECAST } from './types';
 import { Api } from '../../utils';
 
 const api = new Api();
 
 /**
- * currWeatherAction(arg)
+ * fetchCurrentWeather(arg)
  * @param {Object} data
  * @returns {Object} Action
  */
-const currWeatherAction = data => ({
+const fetchCurrentWeather = data => ({
   type: FETCH_CURRENT,
   data,
 });
 
 /**
- * forWeatherAction(arg)
+ * fetchHourlyForecast(arg)
  * @param {Object} data
  * @returns {Object} Action
  */
-const forWeatherAction = data => ({
+const fetchHourlyForecast = data => ({
   type: FETCH_FORECAST,
   data,
 });
 
 /**
- * fetchCurrentWeather(arg)
+ * fetchWeatherError()
+ * @returns {Object} Action
+ */
+const fetchWeatherError = () => ({
+  type: FETCH_ERROR,
+});
+
+/**
+ * getCurrentWeather(arg)
  * @param {String} city
  * @returns {Promise}
  */
-const fetchCurrentWeather = city => async dispatch => {
-  const data = await api.currentWeather(city);
-  return dispatch(currWeatherAction(data));
+const getCurrentWeather = ({ input }) => async dispatch => {
+  const data = await api.currentWeather(input);
+  if (!data) return dispatch(fetchWeatherError());
+  return dispatch(fetchCurrentWeather(data));
 };
 
 /**
- * fetchHourlyForecast(arg)
+ * getHourlyForecast(arg)
  * @param {String} city
  * @returns {Promise}
  */
-const fetchHourlyForecast = city => async dispatch => {
+const getHourlyForecast = city => async dispatch => {
   const data = await api.hourlyForecast(city);
-  return dispatch(forWeatherAction(data));
+  if (!data) return dispatch(fetchWeatherError());
+  return dispatch(fetchHourlyForecast(data));
 };
 
 export {
-  fetchCurrentWeather,
-  fetchHourlyForecast,
+  getCurrentWeather,
+  getHourlyForecast,
 };

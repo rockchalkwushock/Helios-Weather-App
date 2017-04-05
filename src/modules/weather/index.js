@@ -1,17 +1,21 @@
 import {
-  fetchCurrentWeather,
-  fetchHourlyForecast,
+  getCurrentWeather,
+  getHourlyForecast,
 } from './actions';
 import {
   FETCH_CURRENT,
+  FETCH_ERROR,
   FETCH_FORECAST,
 } from './types.js';
-import weatherReducer from './reducer';
+import weatherReducer,
+{ initialState } from './reducer';
 
 export {
-  fetchCurrentWeather,
-  fetchHourlyForecast,
+  getCurrentWeather,
+  getHourlyForecast,
   FETCH_CURRENT,
+  FETCH_ERROR,
   FETCH_FORECAST,
+  initialState,
   weatherReducer,
 };

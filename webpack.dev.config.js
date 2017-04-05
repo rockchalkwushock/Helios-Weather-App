@@ -3,6 +3,8 @@ const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+require('dotenv-safe').load();
+
 const VENDOR_LIBS = [
   'axios', 'react', 'react-dom', 'react-redux',
   'redux', 'redux-form',
@@ -65,6 +67,12 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        API_KEY: JSON.stringify(process.env.API_KEY),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
