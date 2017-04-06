@@ -5,7 +5,8 @@
     "src/modules/weather/*.js"
   ],
   "coveragePathIgnorePatterns": [
-    "src/modules/weather/actions.js"
+    "src/modules/weather/actions.js",
+    "src/utils/axiosConfig.js"
   ],
   "coverageThreshold": {
     "global": {

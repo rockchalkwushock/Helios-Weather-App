@@ -1,4 +1,7 @@
 import {
+  fetchCurrentWeather,
+  fetchHourlyForecast,
+  fetchWeatherError,
   getCurrentWeather,
   getHourlyForecast,
 } from './actions';
@@ -11,6 +14,9 @@ import weatherReducer,
 { initialState } from './reducer';
 
 export {
+  fetchCurrentWeather,
+  fetchHourlyForecast,
+  fetchWeatherError,
   getCurrentWeather,
   getHourlyForecast,
   FETCH_CURRENT,

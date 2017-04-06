@@ -5,6 +5,7 @@ const api = new Api();
 
 /**
  * fetchCurrentWeather(arg)
+ *
  * @param {Object} data
  * @returns {Object} Action
  */
@@ -15,6 +16,7 @@ const fetchCurrentWeather = data => ({
 
 /**
  * fetchHourlyForecast(arg)
+ *
  * @param {Object} data
  * @returns {Object} Action
  */
@@ -25,6 +27,7 @@ const fetchHourlyForecast = data => ({
 
 /**
  * fetchWeatherError()
+ *
  * @returns {Object} Action
  */
 const fetchWeatherError = () => ({
@@ -33,6 +36,7 @@ const fetchWeatherError = () => ({
 
 /**
  * getCurrentWeather(arg)
+ *
  * @param {String} city
  * @returns {Promise}
  */
@@ -44,6 +48,7 @@ const getCurrentWeather = ({ input }) => async dispatch => {
 
 /**
  * getHourlyForecast(arg)
+ *
  * @param {String} city
  * @returns {Promise}
  */
@@ -54,6 +59,9 @@ const getHourlyForecast = city => async dispatch => {
 };
 
 export {
+  fetchCurrentWeather,
+  fetchHourlyForecast,
+  fetchWeatherError,
   getCurrentWeather,
   getHourlyForecast,
 };

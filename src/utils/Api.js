@@ -1,15 +1,26 @@
 import axios from 'axios';
+import './axiosConfig';
 import unitConverter from './unitConversion';
 
-axios.defaults.baseURL = 'http://api.openweathermap.org/data/2.5/';
-axios.defaults.headers.post['Content-Type'] = 'application/json';
 const key = process.env.API_KEY;
 
+/**
+ * @class Api
+ *
+ * @method currentWeather(arg)
+ * @method hourlyForecast(arg)
+ */
 export default class {
   constructor() {
     this.current = `weather?appid=${key}`;
     this.forecast = `forecast?appid=${key}`;
   }
+  /**
+   * currentWeather(arg)
+   *
+   * @param {String} city
+   * @returns {Promise}
+   */
   async currentWeather(city) {
     const url = `${this.current}&q=${city},us`;
     try {
@@ -29,6 +40,12 @@ export default class {
       return _data;
     } catch (e) { console.error(e); } // eslint-disable-line
   }
+  /**
+   * hourlyForecast (arg)
+   *
+   * @param {String} city
+   * @returns {Promise}
+   */
   async hourlyForecast(city) {
     const url = `${this.forecast}&q=${city},us`;
     try {
