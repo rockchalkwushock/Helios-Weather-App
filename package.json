@@ -8,20 +8,35 @@
   "license": "MIT",
   "scripts": {
     "build": "",
-    "clean:repo": "",
+    "clean:repo": "rimraf coverage/ dist/",
     "commit": "git cz",
     "dev:c": "",
     "dev:s": "",
-    "lint": "",
+    "lint": "eslint api/ src/",
     "precommit": "",
-    "report-coverage": "",
+    "push": "git push origin v2.0.0",
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
     "start": "",
-    "test": "",
-    "test:coverage": "",
-    "test:watch": ""
+    "test": "BABEL_ENV=test jest --config=.jestConfig.json",
+    "test:coverage": "yarn test -- --coverage",
+    "test:watch": "yarn test -- --watch"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "2.0.0"
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.3.2",
+    "babel-preset-react": "^6.23.0",
+    "babel-register": "^6.24.0",
+    "codecov": "^2.1.0",
+    "cz-conventional-changelog": "2.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-equimper": "^1.6.2",
+    "jest": "^19.0.2",
+    "jest-cli": "^19.0.2",
+    "rimraf": "^2.6.1"
   },
   "config": {
     "commitizen": {

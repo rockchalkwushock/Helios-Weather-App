@@ -1,0 +1,6 @@
+{
+  "extends": "equimper",
+  "env": {
+    "jest": true
+  }
+}
