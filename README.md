@@ -8,7 +8,7 @@ Progressive Web Application built with React & Redux for Weather monitoring.
 ## WIP
 I am currently doing a rewrite of this project to bring it up to speed with the current ecosystems of the tech that was being used; and implement best practices I was not aware of during the building of _v1.0.0_.
 
-If you would like to see what _v1.0.0_ looked like please visit this [branch]().
+If you would like to see what _v1.0.0_ looked like please visit this [branch](https://github.com/rockchalkwushock/Helios-Weather-App/tree/v1.0.0).
 
 ### TODO _v2.0.0_
 - [ ] Test & Build Redux logic of application.
