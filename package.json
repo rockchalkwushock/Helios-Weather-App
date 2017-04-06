@@ -1,0 +1,31 @@
+{
+  "name": "helios-weather-app",
+  "version": "2.0.0-alpha.0",
+  "description": "Progressive Web Application built with React & Redux for weather monitory using the Weatherbit.io API.",
+  "main": "index.js",
+  "repository": "https://github.com/rockchalkwushock/Helios-Weather-App.git",
+  "author": "Cody <rockchalkwushock@iclould.com> (https://rockchalkwushock.github.io/rcws-development/)",
+  "license": "MIT",
+  "scripts": {
+    "build": "",
+    "clean:repo": "",
+    "commit": "git cz",
+    "dev:c": "",
+    "dev:s": "",
+    "lint": "",
+    "precommit": "",
+    "report-coverage": "",
+    "start": "",
+    "test": "",
+    "test:coverage": "",
+    "test:watch": ""
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
