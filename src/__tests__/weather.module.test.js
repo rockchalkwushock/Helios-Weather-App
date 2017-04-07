@@ -16,6 +16,7 @@ import {
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const city = 'Wichita';
+const message = 'Oops! Seems to be an issue right now, try back later.';
 
 describe('Weather Module', () => {
   describe('Reducer', () => {
@@ -85,19 +86,84 @@ describe('Weather Module', () => {
         .then(() => {
           const actions = store.getActions();
           const actual = actions[0];
-          const expected = { type: FETCH_CURRENT, payload: { city_name: 'Wichita' } };
+          const expected = { type: FETCH_CURRENT };
           expect(actual.type).toEqual(expected.type);
-          expect(actual.payload.city_name).toEqual(expected.payload.city_name);
+        })
+    ));
+    test('getCurrentWeather: verify payload', () => (
+      store.dispatch(getCurrentWeather({ input: city }))
+        .then(() => {
+          const actions = store.getActions();
+          const actual = actions[0].payload;
+          // Using a constant value to test expected value at that key.
+          const expected = { type: FETCH_CURRENT, payload: { city_name: 'Wichita' } };
+          expect(actual.city_name).toEqual(expected.payload.city_name);
+          expect(actual).toHaveProperty('country_code');
+          expect(actual).toHaveProperty('dewpt');
+          expect(actual).toHaveProperty('precip');
+          expect(actual).toHaveProperty('pres');
+          expect(actual).toHaveProperty('rh');
+          expect(actual).toHaveProperty('state_code');
+          expect(actual).toHaveProperty('sunrise');
+          expect(actual).toHaveProperty('sunset');
+          expect(actual).toHaveProperty('temp');
+          expect(actual).toHaveProperty('uv');
+          expect(actual).toHaveProperty('weather');
+          expect(actual.weather).toHaveProperty('icon');
+          expect(actual.weather).toHaveProperty('code');
+          expect(actual.weather).toHaveProperty('description');
+          expect(actual).toHaveProperty('wind_cdir');
+          expect(actual).toHaveProperty('wind_spd');
+        })
+    ));
+    test('getCurrentWeather: yields type FETCH_ERROR & error message in payload from API response on failure', () => (
+      store.dispatch(getCurrentWeather({ undefined }))
+        .then(() => {
+          const actions = store.getActions();
+          const actual = actions[0];
+          const expected = { type: FETCH_ERROR, payload: { message } };
+          expect(actual.type).toEqual(expected.type);
+          expect(actual.payload).toEqual(expected.payload);
         })
     ));
     test('getHourlyForecast: yields type FETCH_FORECAST from API response on success', () => (
-      // TODO: Update payload key with expected data
       store.dispatch(getHourlyForecast({ input: city }))
         .then(() => {
           const actions = store.getActions();
           const actual = actions[0];
+          // Not checking for payload in expected
+          // because of sheer size & the fact I cannot
+          // manually create a payload that will be true
+          // 100% of the time since the data is always changing.
           const expected = { type: FETCH_FORECAST };
           expect(actual.type).toEqual(expected.type);
+        })
+    ));
+    test('getHourlyForecast: verify payload', () => (
+      store.dispatch(getHourlyForecast({ input: city }))
+        .then(() => {
+          const actions = store.getActions();
+          const actual = actions[0].payload;
+          expect(actual).toHaveLength(8); // this is for 1 day ONLY!!!
+          expect(actual[0]).toHaveProperty('wind_cdir');
+          expect(actual[0]).toHaveProperty('wind_spd');
+          expect(actual[0]).toHaveProperty('weather');
+          expect(actual[0].weather).toHaveProperty('icon');
+          expect(actual[0].weather).toHaveProperty('code');
+          expect(actual[0].weather).toHaveProperty('description');
+          expect(actual[0]).toHaveProperty('precip');
+          expect(actual[0]).toHaveProperty('datetime');
+          expect(actual[0]).toHaveProperty('temp');
+        })
+    ));
+    test('getHourlyForecast: yields type FETCH_ERROR & error message in payload from API response on failure', () => (
+      store.dispatch(getHourlyForecast({ undefined }))
+        .then(() => {
+          const actions = store.getActions();
+          const actual = actions[0];
+          const expected = { type: FETCH_ERROR, payload: { message } };
+          expect(actual.type).toEqual(expected.type);
+          expect(actual.payload).toEqual(expected.payload);
         })
     ));
   });

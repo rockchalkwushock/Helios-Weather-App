@@ -22,10 +22,12 @@ const fetchCurrent = data => ({
 /**
  * fetchError()
  *
+ * @param {Object} data
  * @returns {Object} Action
  */
-const fetchError = () => ({
+const fetchError = data => ({
   type: FETCH_ERROR,
+  payload: data,
 });
 
 /**
@@ -47,6 +49,7 @@ const fetchForecast = data => ({
  */
 const getCurrentWeather = ({ input }) => async dispatch => {
   const data = await api.currentWeather(input);
+  if (data.message) return dispatch(fetchError(data));
   return dispatch(fetchCurrent(data));
 };
 
@@ -58,6 +61,7 @@ const getCurrentWeather = ({ input }) => async dispatch => {
  */
 const getHourlyForecast = ({ input }) => async dispatch => {
   const data = await api.hourlyForecast(input);
+  if (data.message) return dispatch(fetchError(data));
   return dispatch(fetchForecast(data));
 };
 

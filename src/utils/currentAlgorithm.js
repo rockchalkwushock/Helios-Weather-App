@@ -1,7 +1,7 @@
 // https://github.com/rockchalkwushock/Helios-Weather-App/issues/3
 
-export default data => {
-  const result = data.reduce((acc, val) => {
+export default data => (
+  data.reduce((acc, val) => {
     const filteredData = {
       wind_cdir: val.wind_cdir,
       state_code: val.state_code,
@@ -23,6 +23,5 @@ export default data => {
       temp: val.temp,
     };
     return filteredData;
-  }, {});
-  return result;
-};
+  }, {})
+);

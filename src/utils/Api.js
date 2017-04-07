@@ -1,6 +1,14 @@
 import axios from 'axios';
 import currentAlgorithm from './currentAlgorithm';
+import forecastAlgorithm from './forecastAlgorithm';
 import './axiosConfig';
+
+/**
+ * Weatherbit.io API Response
+ * - res.data comes in as an {[Object]} for this endpoint.
+ * - Using deconstruction:
+ *   { response: { data: { data } } } gives me [Object]
+ */
 
 // Necessary for running async action tests.
 // Because webpack is not being used no access
@@ -20,6 +28,7 @@ const key = process.env.API_KEY;
 export default class {
   constructor() {
     this.currentUrl = `/current/geosearch?key=${key}`;
+    this.error = { message: 'Oops! Seems to be an issue right now, try back later.' };
     this.forecastUrl = `/forecast/3hourly/geosearch?key=${key}`;
   }
   /**
@@ -27,28 +36,33 @@ export default class {
    *
    * @param {String} city
    * @returns {Promise}
+   * @returns {Object}
    */
   async currentWeather(city) {
     const url = `${this.currentUrl}&city=${city}`;
     try {
-      // res.data comes in as an {[Object]} for this endpoint.
-      // Using deconstruction { response: { data: { data } } } gives me [Object]
       const { data: { data } } = await axios.get(url);
-      const filteredData = currentAlgorithm(data);
-      return filteredData;
-    } catch (e) { console.error(e); } // eslint-disable-line
+      // return massaged data.
+      return currentAlgorithm(data);
+    } catch (e) {
+      return this.error;
+    }
   }
   /**
    * hourlyForecast(arg)
    *
    * @param {String} city
    * @returns {Promise}
+   * @returns {Object}
    */
   async hourlyForecast(city) {
     const url = `${this.forecastUrl}&city=${city}&days=1`;
     try {
-      const { data } = await axios.get(url);
-      return data;
-    } catch (e) { console.error(e); } // eslint-disable-line
+      const { data: { data } } = await axios.get(url);
+      // return massaged data.
+      return forecastAlgorithm(data);
+    } catch (e) {
+      return this.error;
+    }
   }
 }
