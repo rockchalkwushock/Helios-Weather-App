@@ -13,7 +13,7 @@
     "dev:c": "",
     "dev:s": "NODE_ENV=development nodemon index.js",
     "lint": "eslint api/ src/",
-    "precommit": "",
+    "precommit": "yarn lint && yarn test",
     "push": "git push origin v2.0.0",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "start": "NODE_ENV=production nodemon index.js",
@@ -32,11 +32,14 @@
     "babel-register": "^6.24.0",
     "codecov": "^2.1.0",
     "cz-conventional-changelog": "2.0.0",
+    "dotenv-safe": "^4.0.3",
     "eslint": "^3.19.0",
     "eslint-config-equimper": "^1.6.2",
+    "husky": "^0.13.3",
     "jest": "^19.0.2",
     "jest-cli": "^19.0.2",
     "nodemon": "^1.11.0",
+    "redux-mock-store": "^1.2.2",
     "rimraf": "^2.6.1"
   },
   "config": {
@@ -45,12 +48,16 @@
     }
   },
   "dependencies": {
+    "axios": "^0.16.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.2.0",
     "koa-compose": "^3.2.1",
     "koa-helmet": "^3.1.0",
     "koa-morgan": "^1.0.1",
     "koa-router": "^7.1.1",
-    "koa-static": "^3.0.0"
+    "koa-static": "^3.0.0",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   }
 }

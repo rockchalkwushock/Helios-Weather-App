@@ -13,6 +13,5 @@ node_js:
   - '6'
 script:
   - yarn test:coverage
-  - yarn build
 after_success:
   - yarn report-coverage
