@@ -1,4 +1,5 @@
 import axios from 'axios';
+import currentAlgorithm from './currentAlgorithm';
 import './axiosConfig';
 
 // Necessary for running async action tests.
@@ -30,8 +31,11 @@ export default class {
   async currentWeather(city) {
     const url = `${this.currentUrl}&city=${city}`;
     try {
+      // res.data comes in as an {[Object]} for this endpoint.
+      // Using deconstruction { response: { data: { data } } } gives me [Object]
       const { data: { data } } = await axios.get(url);
-      return data[0];
+      const filteredData = currentAlgorithm(data);
+      return filteredData;
     } catch (e) { console.error(e); } // eslint-disable-line
   }
   /**

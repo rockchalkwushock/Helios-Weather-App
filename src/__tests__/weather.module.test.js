@@ -80,14 +80,14 @@ describe('Weather Module', () => {
     beforeEach(() => {
       store = mockStore();
     });
-    // TODO: Update payload key with expected data
     test('getCurrentWeather: yields type FETCH_CURRENT from API response on success', () => (
       store.dispatch(getCurrentWeather({ input: city }))
         .then(() => {
           const actions = store.getActions();
           const actual = actions[0];
-          const expected = { type: FETCH_CURRENT };
+          const expected = { type: FETCH_CURRENT, payload: { city_name: 'Wichita' } };
           expect(actual.type).toEqual(expected.type);
+          expect(actual.payload.city_name).toEqual(expected.payload.city_name);
         })
     ));
     test('getHourlyForecast: yields type FETCH_FORECAST from API response on success', () => (

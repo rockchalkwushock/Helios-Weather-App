@@ -31,7 +31,7 @@ const fetchError = () => ({
 /**
  * fetchForecast(arg)
  *
- * @param {Object | Array} data
+ * @param {Array} data
  * @returns {Object} Action
  */
 const fetchForecast = data => ({
