@@ -1,6 +1,6 @@
 # Helios-Weather-App
-[![Build Status](https://travis-ci.org/rockchalkwushock/Helios-Weather-App.svg?branch=master)](https://travis-ci.org/rockchalkwushock/Helios-Weather-App)
-[![Dependencies Status](https://david-dm.org/rockchalkwushock/Helios-Weather-App.svg?branch=master)](https://david-dm.org/rockchalkwushock/Helios-Weather-App.svg)
+[![Build Status](https://travis-ci.org/rockchalkwushock/Helios-Weather-App.svg?branch=v1.0.0)](https://travis-ci.org/rockchalkwushock/Helios-Weather-App)
+[![Dependencies Status](https://david-dm.org/rockchalkwushock/Helios-Weather-App.svg?branch=v1.0.0)](https://david-dm.org/rockchalkwushock/Helios-Weather-App.svg)
 
 Thinkful Capstone #3: Weather App using OpenWeatherMap API &amp; React Framework
 
@@ -75,4 +75,4 @@ Open your browser to: [http://localhost:8080](http://localhost:8080).
 
 ## Visual flow of App for user (V:1.0.0)
 
-![sprite](https://github.com/rockchalkwushock/Helios-Weather-App/blob/master/img/sprites.png "Visual App Flow")
+![sprite](https://github.com/rockchalkwushock/Helios-Weather-App/blob/v1.0.0/img/sprites.png "Visual App Flow")
