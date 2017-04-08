@@ -1,6 +1,6 @@
 # Helios-Weather-App
-[![Build Status](https://travis-ci.org/rockchalkwushock/Helios-Weather-App.svg?branch=master)](https://travis-ci.org/rockchalkwushock/Helios-Weather-App)
-[![codecov](https://codecov.io/gh/rockchalkwushock/Helios-Weather-App/branch/master/graph/badge.svg)](https://codecov.io/gh/rockchalkwushock/Helios-Weather-App)
+[![Travis branch](https://img.shields.io/travis/rockchalkwushock/Helios-Weather-App/master.svg?style=flat-square)](https://travis-ci.org/rockchalkwushock/Helios-Weather-App.svg?branch=master)
+[![Codecov branch](https://img.shields.io/codecov/c/github/rockchalkwushock/Helios-Weather-App/master.svg?style=flat-square)](https://codecov.io/gh/rockchalkwushock/Helios-Weather-App)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 
 Progressive Web Application built with React & Redux for Weather monitoring.
@@ -11,11 +11,11 @@ I am currently doing a rewrite of this project to bring it up to speed with the 
 If you would like to see what _v1.0.0_ looked like please visit this [branch](https://github.com/rockchalkwushock/Helios-Weather-App/tree/v1.0.0).
 
 ### TODO _v2.0.0_
-- [ ] `curl` and test using [weatherbit.io](https://www.weatherbit.io) API.
-- [ ] Test & Build Redux logic of application.
+- [x] `curl` and test using [weatherbit.io](https://www.weatherbit.io) API.
+- [x] Test & Build Redux logic of application.
 - [ ] Test & Build React Views
 - [ ] Implement `flow` type checking.
-- [ ] Build simple server for rendering static files `express` or `koa`.
+- [x] Build simple server for rendering static files `express` or `koa`.
 - [ ] Deploy to Zeit.
 - [ ] Documentation (internal & external)
 

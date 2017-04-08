@@ -10,7 +10,7 @@
     "build": "",
     "clean:repo": "rimraf coverage/ dist/",
     "commit": "git cz",
-    "dev:c": "",
+    "dev:c": "BABEL_ENV=development NODE_ENV=development webpack-dev-server --colors --profile --config webpack.dev.config.js",
     "dev:s": "NODE_ENV=development nodemon index.js",
     "lint": "eslint api/ src/",
     "precommit": "yarn lint && yarn test",
@@ -22,6 +22,7 @@
     "test:watch": "yarn test -- --watch"
   },
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
     "babel-jest": "^19.0.0",
@@ -31,16 +32,31 @@
     "babel-preset-react": "^6.23.0",
     "babel-register": "^6.24.0",
     "codecov": "^2.1.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.0",
     "cz-conventional-changelog": "2.0.0",
     "dotenv-safe": "^4.0.3",
     "eslint": "^3.19.0",
     "eslint-config-equimper": "^1.6.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
     "husky": "^0.13.3",
+    "image-webpack-loader": "^3.3.0",
     "jest": "^19.0.2",
     "jest-cli": "^19.0.2",
     "nodemon": "^1.11.0",
+    "postcss-loader": "^1.3.3",
+    "react-hot-loader": "3.0.0-beta.6",
+    "redbox-react": "^1.3.4",
+    "redux-devtools-extension": "^2.13.0",
     "redux-mock-store": "^1.2.2",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "sw-precache-webpack-plugin": "^0.9.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.3.3",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-dev-server": "^2.4.2"
   },
   "config": {
     "commitizen": {
@@ -49,6 +65,7 @@
   },
   "dependencies": {
     "axios": "^0.16.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.2.0",
@@ -57,7 +74,11 @@
     "koa-morgan": "^1.0.1",
     "koa-router": "^7.1.1",
     "koa-static": "^3.0.0",
+    "react": "^15.5.2",
+    "react-dom": "^15.5.2",
+    "react-redux": "^5.0.3",
     "redux": "^3.6.0",
+    "redux-form": "^6.6.2",
     "redux-thunk": "^2.2.0"
   }
 }

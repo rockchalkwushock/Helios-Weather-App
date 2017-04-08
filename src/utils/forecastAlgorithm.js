@@ -1,3 +1,4 @@
+// https://github.com/rockchalkwushock/Helios-Weather-App/issues/4
 
 export default data => (
   data.reduce((acc, val) => {
