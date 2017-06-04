@@ -1,3 +1,4 @@
+import Search from './search'
 import Wrapper from './Wrapper'
 
-export { Wrapper }
+export { Search, Wrapper }
