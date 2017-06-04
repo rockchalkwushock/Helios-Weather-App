@@ -7,7 +7,9 @@
   "repository": "https://github.com/rockchalkwushock/Helios-Weather-App.git",
   "main": "index.js",
   "scripts": {
+    "build": "nps build",
     "commit": "nps commit",
+    "dev": "nps dev",
     "precommit": "lint-staged && nps validate",
     "prettier": "prettier --single-quote --print-width 80 --trailing-comma all --no-semi --use-tabs",
     "start": "nps",
@@ -46,6 +48,8 @@
   "dependencies": {
     "axios": "~0.16.2",
     "dotenv-safe": "~4.0.4",
+    "glamor": "~2.20.25",
+    "glamorous": "~3.20.0",
     "next": "~2.4.1",
     "react": "~15.5.4",
     "react-dom": "~15.5.4",
