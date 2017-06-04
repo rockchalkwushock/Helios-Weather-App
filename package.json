@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "commit": "nps commit",
-    "precommit": "lint-staged",
+    "precommit": "lint-staged && nps validate",
     "prettier": "prettier --single-quote --print-width 80 --trailing-comma all --no-semi --use-tabs",
     "start": "nps",
     "test": "nps test"
