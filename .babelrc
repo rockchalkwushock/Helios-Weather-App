@@ -1,3 +1,38 @@
+/**
+ * NOTE: Next.js has babel-preset-env built-in
+ *       We must switch modules to CJS for testing
+ *       because Next has this set to false.
+ *       Not doing so will lead to import/export error messages from Jest.
+ *       BABEL: http://babeljs.io/docs/plugins/preset-env/#optionsmodules
+ *       NEXT: https://github.com/zeit/next.js/blob/v3-beta/server/build/babel/preset.js#L16
+ */
 {
-  "presets": ["next/babel"]
+  "env": {
+    "development": {
+      "presets": ["next/babel"],
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-object-rest-spread"
+      ]
+    },
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-object-rest-spread"
+      ]
+    },
+    "test": {
+      "presets": [
+        ["env", {
+          "modules": "commonjs"
+        }],
+        "next/babel"
+      ],
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
 }
