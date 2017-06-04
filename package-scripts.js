@@ -1,6 +1,6 @@
 const npsUtils = require('nps-utils')
 
-const { rimraf, series } = npsUtils
+const { rimraf, series, concurrent, crossEnv } = npsUtils
 
 module.exports = {
   scripts: {
@@ -18,6 +18,32 @@ module.exports = {
       fix: {
         description: 'Lint & fix errors.',
         script: series.nps('lint --fix')
+      }
+    },
+    reportCoverage: {
+      description: 'Send coverage data to third party.',
+      script: 'codecov'
+    },
+    test: {
+      description: 'Run Jest test suite on code base.',
+      default: `${crossEnv(
+        'BABEL_ENV=test'
+      )} jest --config jest.config.json --runInBand`,
+      coverage: {
+        description: 'Generate coverage data.',
+        script: series.nps('test --coverage --silent')
+      },
+      watch: {
+        description: 'Watch test suite.',
+        script: series.nps('test --watch')
+      }
+    },
+    validate: {
+      description: 'Validate code base against linting & tests.',
+      default: concurrent.nps('lint', 'test'),
+      withCoverage: {
+        description: 'Validate code & output coverage data.',
+        script: concurrent.nps('lint', 'test.coverage')
       }
     }
   }
