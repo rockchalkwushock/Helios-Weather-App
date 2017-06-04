@@ -1,0 +1,17 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - master
+    - next
+script:
+  # lint, test, generate coverage
+  - yarn start validate.withCoverage
+  # build client code for distribution
+  # - yarn start client
+after_success:
+  # send coverage data to CodeCov
+  - yarn start reportCoverage

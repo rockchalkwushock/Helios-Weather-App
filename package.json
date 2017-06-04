@@ -29,7 +29,8 @@
     "nps": "~5.3.1",
     "nps-utils": "~1.2.0",
     "prettier": "~1.4.2",
-    "redux-devtools-extension": "~2.13.2"
+    "redux-devtools-extension": "~2.13.2",
+    "redux-mock-store": "~1.2.3"
   },
   "config": {
     "commitizen": {
@@ -43,6 +44,8 @@
     ]
   },
   "dependencies": {
+    "axios": "~0.16.2",
+    "dotenv-safe": "~4.0.4",
     "next": "~2.4.1",
     "react": "~15.5.4",
     "react-dom": "~15.5.4",
