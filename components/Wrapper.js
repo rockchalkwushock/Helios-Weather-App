@@ -9,4 +9,6 @@ const Wrapper = glamorous.div({
   minHeight: '100vh'
 })
 
+Wrapper.displayName = 'Wrapper'
+
 export default Wrapper

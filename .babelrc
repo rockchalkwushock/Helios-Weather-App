@@ -11,6 +11,7 @@
     "development": {
       "presets": ["next/babel"],
       "plugins": [
+        "glamorous-displayname",
         "transform-decorators-legacy",
         "transform-object-rest-spread"
       ]
