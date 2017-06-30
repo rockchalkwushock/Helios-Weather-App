@@ -4,6 +4,7 @@ const { rimraf, series, concurrent, crossEnv } = npsUtils
 
 module.exports = {
   scripts: {
+    build: 'next build',
     clean: {
       description: 'Clean repository of generated directories & files.',
       script: series(rimraf('.next'), rimraf('coverage'))
@@ -12,6 +13,7 @@ module.exports = {
       description: 'Run commitizen-cli for creating clean commit messages.',
       script: 'git cz'
     },
+    dev: 'next',
     lint: {
       description: 'Lint code base.',
       default: 'eslint __tests__ components lib pages',
